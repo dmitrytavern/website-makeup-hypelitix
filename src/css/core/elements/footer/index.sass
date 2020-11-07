@@ -1,1 +1,63 @@
 .footer
+  background: #FAFAFA
+  padding: 70px 0
+  margin-top: 150px
+
+  &__logo
+    margin-bottom: 40px
+
+  &__navigation
+    padding-left: 40px
+    ul
+      display: grid
+      grid-template-columns: 1fr 1fr
+
+      li
+        margin: 5px 0
+
+      a
+        font-size: 18px
+        color: #585858
+
+  &__copyright
+    font-size: 16px
+    color: #585858
+
+  &__title
+    font-size: 24px
+    font-weight: 500
+    margin-bottom: 30px
+
+  &__contacts
+    a
+      display: block
+
+    a:first-child
+      margin-bottom: 17px
+
+@media screen and (max-width: 991px)
+  .footer
+    background: #FAFAFA
+    padding-top: 50px
+    padding-bottom: 120px
+    margin-top: 120px
+
+    &__logo
+      margin-bottom: 20px
+
+      &-col
+        text-align: center
+        margin-bottom: 40px
+
+    &__navigation
+      padding-left: 00px
+
+@media screen and (max-width: 767px)
+  .footer
+    &__navigation
+      margin-bottom: 50px
+
+@media screen and (max-width: 420px)
+  .footer
+    &__navigation ul
+      grid-template-columns: 47% 53%

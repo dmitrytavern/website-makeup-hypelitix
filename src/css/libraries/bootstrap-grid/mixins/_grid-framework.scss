@@ -3,7 +3,7 @@
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
-$--root--bootstrap-grid_offset: false;
+$--root--bootstrap-grid_offset: true;
 $--root--bootstrap-grid_auto: false;
 
 @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {

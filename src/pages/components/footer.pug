@@ -1,2 +1,25 @@
 mixin footer()
-	footer
+    footer.footer
+        .container
+            .row
+                .col-12.col-lg-3.footer__logo-col
+                    .footer__logo.logo Hype<span>litix</span>
+                    p.footer__copyright © 2020 Hypelitix. All rights reserved.
+
+                .col-12.col-md-8.col-lg-5.footer__navigation-col
+                    nav.footer__navigation
+                        ul
+                            li <a href="#">About Us</a>
+                            li <a href="#">Terms of Service</a>
+                            li <a href="#">Prices</a>
+                            li <a href="#">Privacy Policy</a>
+                            li <a href="#">Contact Us</a>
+                            li <a href="#">Public Offer Agreement</a>
+                            li <a href="#">API Docs</a>
+                            li <a href="#">Cookie Policy</a>
+
+                .col-12.col-md-4.col-lg-3.offset-lg-1
+                    .footer__title Get in Touch
+                    .footer__contacts
+                        a( href="mailto: contact@hypelitix.com" ) contact@hypelitix.com
+                        a( href="tel: +380931539090" ) +380 93 153 90 90
