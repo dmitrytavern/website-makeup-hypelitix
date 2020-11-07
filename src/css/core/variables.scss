@@ -1,0 +1,110 @@
+// Fonts
+
+$font: 'Raleway';
+$font-size: 19px;
+$font-weight: normal;
+$line-height: unset;
+
+
+// Heading
+
+$h1-font-size: 42px;
+$h2-font-size: 38px;
+$h3-font-size: 28px;
+$h4-font-size: 22px;
+
+
+// Color
+
+$color-primary: #4831F2;
+$color-secondary: #FBEDCF;
+$color-tertiary: #000000;
+
+$color-primary-hover: #2B14DA;
+$color-secondary-hover: #FBEDCF;
+$color-tertiary-hover: #000000;
+
+$color-primary-text: #ffffff;
+$color-secondary-text: #000;
+$color-tertiary-text: #ffffff;
+
+$color-primary-hover-text: #ffffff;
+$color-secondary-hover-text: #000;
+$color-tertiary-hover-text: #ffffff;
+
+$colors: (
+        "primary": (
+                "default": $color-primary,
+                "text": $color-primary-text,
+                "hover": $color-primary-hover,
+                "hover-text": $color-primary-hover-text
+        ),
+        "secondary": (
+                "default": $color-secondary,
+                "text": $color-secondary-text,
+                "hover": $color-secondary-hover,
+                "hover-text": $color-secondary-hover-text
+        ),
+        "tertiary": (
+                "default": $color-tertiary,
+                "text": $color-tertiary-text,
+                "hover": $color-tertiary-hover,
+                "hover-text": $color-tertiary-hover-text
+        )
+);
+
+
+// Indents
+
+$indents-available: false;
+$indents-padding-available: true;
+$indents-margin-available: true;
+
+$indents: (
+        "margin": (
+                "0": 0px,
+                "1": 15px,
+                "2": 30px
+        ),
+        "padding": (
+                "0": 0px,
+                "1": 10px,
+                "2": 20px,
+        )
+);
+
+
+// Links
+
+$link-decor: false;
+$link-decor-hover: false;
+
+$link-color: #2B2B2B;
+$link-color-hover: #000000;
+$link-color-visited: #2B2B2B;
+$link-color-active: #4831F2;
+
+
+// Buttons
+
+$btn-border-radius: 2px;
+$btn-transition: all .3s;
+
+$btn-font: $font;
+$btn-font-weight: 500;
+$btn-font-size: 17px;
+$btn-padding: 16px 40px;
+
+$btn-sizes: (
+        "default": (
+                "font-size": $btn-font-size,
+                "padding": $btn-padding
+        )
+);
+
+
+// Dropdown
+
+$dropdown-transition: all .3s;
+$dropdown-ico-size: 14px;
+$dropdown-ico-ml: 8px;

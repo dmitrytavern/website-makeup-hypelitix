@@ -1,0 +1,8 @@
+if htmlWebpackPlugin.options.env["NODE_ENV"] === 'development'
+	script(src="http://localhost:35729/livereload.js")
+
+each file in htmlWebpackPlugin.files.js
+	script(src=file)
+
+if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production' && htmlWebpackPlugin.options.modeCompileSplit && htmlWebpackPlugin.options.jsPage
+	script( src=htmlWebpackPlugin.options.routeDist.jsPages + '/' + htmlWebpackPlugin.options.filenameRoot + '.js' )

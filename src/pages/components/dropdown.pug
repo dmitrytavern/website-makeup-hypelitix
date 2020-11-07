@@ -1,0 +1,10 @@
+mixin dropdown(obj={})
+	.dropdown( class=obj.dropdown )
+		.btn.dropdown-btn(data-toggle='dropdown' class=obj.btn || 'btn-secondary')
+			| #{obj.title}
+			svg.dropdown-ico(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width="17" height="17" stroke='currentColor' stroke-width='2')
+				polyline(points='6 9 12 15 18 9')
+
+		.dropdown-menu
+			if block
+				block

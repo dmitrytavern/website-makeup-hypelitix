@@ -1,0 +1,5 @@
+
+if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
+    each file in htmlWebpackPlugin.files.css
+        if file.search('.min') > -1
+            link(href=file rel="stylesheet")

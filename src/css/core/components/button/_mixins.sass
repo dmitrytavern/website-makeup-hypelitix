@@ -1,0 +1,52 @@
+@use "sass:map"
+
+
+@mixin _btn-size($size)
+	$local-sizes: 			map.get($btn-sizes, $size)
+	$local-font-size:		map.get($local-sizes, 'font-size')
+	$local-padding:			map.get($local-sizes, 'padding')
+
+	font-size: $local-font-size
+	padding: $local-padding
+
+
+
+// For outline buttons
+
+@mixin _btn-outline($type)
+	$local-colors: 			map.get($colors, $type)
+	$local-color: 			map.get($local-colors, 'default')
+
+	border: 1px solid $local-color
+	color: $local-color
+
+@mixin _btn-outline-hover($type)
+	$local-colors: 			map.get($colors, $type)
+	$local-color: 			map.get($local-colors, 'default')
+	$local-color-hover: map.get($local-colors, 'hover')
+
+	&:hover
+		border: 1px solid $local-color-hover
+		color: $local-color-hover
+
+
+
+// For fill buttons
+
+@mixin _btn-fill($type)
+	$local-colors: 			map.get($colors, $type)
+	$local-color: 			map.get($local-colors, 'default')
+	$local-color-text: 	map.get($local-colors, 'text')
+
+	background: $local-color
+	color: $local-color-text
+
+
+@mixin _btn-fill-hover($type)
+	$local-colors: 						map.get($colors, $type)
+	$local-color-hover: 			map.get($local-colors, 'hover')
+	$local-color-hover-text: 	map.get($local-colors, 'hover-text')
+
+	&:hover
+		background: $local-color-hover
+		color: $local-color-hover-text

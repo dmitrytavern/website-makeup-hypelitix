@@ -1,0 +1,32 @@
+.dropdown
+	&-menu
+		@include visibility-hidden
+
+		transition: $dropdown-transition
+		transform: unset !important
+		top: 100% !important
+		display: block
+
+		&.show
+			@include visibility-visible
+
+	&-btn
+		display: inline-flex
+		align-items: center
+		padding: 8px 10px
+
+	&-ico
+		transition: $dropdown-transition
+		width: $dropdown-ico-size
+		height: $dropdown-ico-size
+		margin-left: $dropdown-ico-ml
+
+	&.show
+		.dropdown-ico
+			transform: rotate(180deg)
+
+
+.dropdown-lang
+	.dropdown-content img
+		max-width: 25px
+		max-height: 18px

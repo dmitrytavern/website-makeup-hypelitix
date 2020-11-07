@@ -1,0 +1,90 @@
+*
+	margin: 0
+	padding: 0
+	border: 0
+	font: inherit
+	vertical-align: baseline
+
+*, *:before, *:after
+	box-sizing: border-box
+
+
+html, body
+	min-height: 100vh
+	position: relative
+
+body
+	overflow-x: 	hidden
+	color: 			$color-tertiary
+	font-family: 	$font
+	font-weight: 	$font-weight
+	font-size: 		$font-size
+	line-height: 	$line-height
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	text-align: left
+
+ol, ul
+	list-style: none
+
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section
+	display: block
+
+
+a
+	color: $link-color
+
+	@if $link-decor
+		text-decoration: underline
+	@else
+		text-decoration: none
+
+
+	&:hover
+		color: $link-color-hover
+
+		@if $link-decor-hover
+			text-decoration: underline
+		@else
+			text-decoration: none
+
+	&:visited
+		color: $link-color-visited
+
+	&:active
+		color: $link-color-active
+
+
+p
+	line-height: 22px
+
+li
+	line-height: 23px
+
+img
+	max-width: 100%
+	vertical-align: middle
+	border-style: none
+
+svg
+	overflow: hidden
+
+
+
+h1, .h1
+	font-size: $h1-font-size
+	font-weight: 700
+
+h2, .h2
+	font-size: $h2-font-size
+	font-weight: 700
+
+h3, .h3
+	font-size: $h3-font-size
+	font-weight: 600
+
+h4, .h4
+	font-size: $h4-font-size
+	font-weight: 600

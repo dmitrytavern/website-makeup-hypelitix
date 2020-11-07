@@ -1,0 +1,41 @@
+mixin header(theme)
+    header( class=theme === undefined ? '' : theme )
+        .container
+            .row
+                .col-3.header__column
+                    h1.header__logo Hype<span>litix</span>
+                    .header__lang
+                        .dropdown.dropdown-lang
+                            .btn.dropdown-btn(data-toggle='dropdown' class='btn-secondary')
+                                .dropdown-content
+                                    img( src="#" )
+
+                                svg.dropdown-ico(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width="17" height="17" stroke='currentColor' stroke-width='2')
+                                    polyline(points='6 9 12 15 18 9')
+
+                            .dropdown-menu
+                                a.dropdown-item(href="#")
+                                    img( src="#" )
+
+                .col-6.header__column
+                    nav.header__nav
+                        ul
+                            li
+                                a(href="#") About Us
+
+                            li
+                                a(href="#") Prices
+
+                            li
+                                a(href="#") Contact Us
+
+                            li
+                                a(href="#") Log In
+
+                .col-3.header__column
+                    a(href="#")
+                        i
+                    a(href="#")
+                        i
+                    a(href="#")
+                        i

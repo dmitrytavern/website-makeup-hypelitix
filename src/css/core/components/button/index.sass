@@ -1,0 +1,20 @@
+@import "mixins"
+
+.btn
+	@include _btn-size('default')
+
+	display: inline-block
+	transition: $btn-transition
+	font-family: $btn-font
+	font-weight: $btn-font-weight
+	border-radius: $btn-border-radius
+	border: none
+	outline: none
+	background: none
+	cursor: pointer
+
+.btn-primary
+	@include _btn-fill('primary')
+
+.btn-secondary
+	@include _btn-fill('secondary')

@@ -1,0 +1,71 @@
+{
+  "name": "hypelitix",
+  "version": "1.0.0",
+  "description": "Project",
+  "author": "Dmitry Tavern",
+  "license": "ISC",
+  "private": true,
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "browserslist": [
+    "> 1%",
+    "ie >= 1000",
+    "edge >= 1000",
+    "ie_mob >= 1000",
+    "ff >= 60",
+    "chrome >= 60",
+    "safari >= 10",
+    "opera >= 60",
+    "ios >= 10",
+    "android >= 8",
+    "bb >= 10"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config config/webpack.dev.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js --progress --hide-modules && rollup -c config/rollup.config.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-private-methods": "^7.10.1",
+    "@babel/plugin-transform-arrow-functions": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "autoprefixer": "^9.8.5",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "cross-env": "^5.0.5",
+    "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-webpack": "^5.1.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "rollup": "^2.21.0",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "svg-sprite-loader": "^5.0.0",
+    "terser-webpack-plugin": "^3.0.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-livereload-plugin": "^2.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "normalize.css": "^8.0.1",
+    "popper.js": "^1.16.1"
+  }
+}

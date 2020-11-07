@@ -1,0 +1,21 @@
+include ../components/header
+include ../components/footer
+include ../components/dropdown
+
+doctype html
+head
+	include parts/head
+	include parts/styles
+body
+
+	div
+		block header
+			+header()
+
+		main
+			block content
+
+	block footer
+		+footer()
+
+	include parts/scripts
