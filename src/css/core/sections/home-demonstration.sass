@@ -8,7 +8,85 @@
 
   &__section
     display: grid
+    grid-template-columns: 60%
+    grid-column-gap: 150px
+    padding: 0 80px
 
     &-title
-    &-description
+      display: flex
+      align-items: center
+      grid-column: 1 / 2
+      grid-row: 1
+
+      > h3
+        align-self: flex-end
+        margin-bottom: 14px
+        margin-left: 14px
+        font-size: 38px
+
+      > span
+        font-size: 80px
+        font-weight: bold
+        opacity: .05
+
     &-icon
+      grid-column: 2
+      grid-row: 1 / 3
+
+    &-description
+      padding-top: 30px
+      grid-column: 1
+      grid-row: 2
+
+      .list
+        margin-top: 50px
+
+@media screen and (max-width: 1439px)
+
+  .demonstration
+    margin-top: 110px
+
+    &__title
+      margin-bottom: 100px
+
+    &__section
+      grid-template-columns: 60%
+      grid-column-gap: 70px
+      padding: 0
+
+      &-title
+        display: block
+
+        > h3
+          margin-bottom: 0
+          margin-left: 0
+
+      &-description
+        padding-top: 40px
+
+@media screen and (max-width: 768px)
+  .demonstration
+    &__title
+      margin-bottom: 80px
+
+    &__section
+      display: block
+
+      &-title
+        position: relative
+        padding: 25px 0
+        margin-bottom: 15px
+
+        > span
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+
+      &-description
+        padding-top: 20px
+
+@media screen and (max-width: 576px)
+  .demonstration
+    &__section
+      &-title h3
+        font-size: 28px
