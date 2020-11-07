@@ -1,0 +1,67 @@
+.tariff-plan
+  background: #FDFBF5
+  margin-top: 150px
+  padding: 85px 150px
+
+  &__wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__content
+    max-width: 587px
+
+  h2
+    font-size: 42px
+    font-weight: 600
+
+  p
+    margin-top: 35px
+    color: #2B2B2B
+
+  &__btn
+    margin-top: 55px
+
+    &.calculator__btn
+      display: none
+
+@media screen and (max-width: 1439px)
+  .tariff-plan
+    padding: 85px 0
+
+@media screen and (max-width: 991px)
+  .tariff-plan
+    padding-top: 120px
+    padding-bottom: 45px
+
+    &__content
+      max-width: unset
+
+    &__wrapper
+      flex-direction: column
+      align-items: unset
+
+    h2
+      font-size: 36px
+
+    p
+      margin-top: 25px
+
+    &__btn
+      display: none
+
+      &.calculator__btn
+        display: inline-block
+
+    &__calculator
+      margin: 70px auto 0
+
+@media screen and (max-width: 578px)
+  .tariff-plan
+    padding-top: 80px
+
+    h2
+      font-size: 32px
+
+    p
+      margin-top: 30px
