@@ -1,0 +1,31 @@
+.section-title
+  &.align-center
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  &.primary-color
+    > h2
+      color: $color-primary
+
+  &.align-left
+    display: inline-block
+
+    > span
+      width: 100%
+
+  > h2
+    font-size: 42px
+
+  > span
+    background: $color-secondary
+    margin-top: 25px
+    height: 6px
+    width: 120px
+    display: block
+
+@media screen and (max-width: 767px)
+  .section-title
+    > h2
+      font-size: 32px

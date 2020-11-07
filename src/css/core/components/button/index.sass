@@ -15,6 +15,10 @@
 
 .btn-primary
 	@include _btn-fill('primary')
+	border: 5px solid $color-primary
+
+	&:hover
+		border-color: $color-primary-hover
 
 .btn-secondary
 	@include _btn-fill('secondary')

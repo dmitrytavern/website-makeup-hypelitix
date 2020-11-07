@@ -1,6 +1,6 @@
 extends layout/default
 
 block content
-	+dropdown({ title: 'test' })
-		a.dropdown-item(href='#') Action
-		a.dropdown-item(href='#') Another action
+	include sections/home-intro
+	include sections/home-services
+	include sections/home-demonstration
