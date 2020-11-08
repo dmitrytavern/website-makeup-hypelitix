@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-bottom:before {
+  content: "\e929";
+}
 .icon-cloud-vision-api .path1:before {
   content: "\e912";
   color: rgb(198, 225, 242);
