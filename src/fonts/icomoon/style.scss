@@ -13,6 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cloud-vision-api .path1:before {
+  content: "\e912";
+  color: rgb(198, 225, 242);
+}
+.icon-cloud-vision-api .path2:before {
+  content: "\e913";
+  margin-left: -1.1455078125em;
+  color: rgb(72, 49, 242);
+}
+.icon-cloud-vision-api .path3:before {
+  content: "\e914";
+  margin-left: -1.1455078125em;
+  color: rgb(255, 92, 243);
+}
+.icon-cloud-vision-api .path4:before {
+  content: "\e915";
+  margin-left: -1.1455078125em;
+  color: rgb(72, 49, 242);
+}
 .icon-alert .path1:before {
   content: "\e900";
   color: rgb(206, 225, 242);
@@ -97,25 +116,6 @@
   content: "\e911";
   margin-left: -1.0986328125em;
   color: rgb(0, 0, 0);
-}
-.icon-cloud-vision-api .path1:before {
-  content: "\e912";
-  color: rgb(198, 225, 242);
-}
-.icon-cloud-vision-api .path2:before {
-  content: "\e913";
-  margin-left: -1.1455078125em;
-  color: none;
-}
-.icon-cloud-vision-api .path3:before {
-  content: "\e914";
-  margin-left: -1.1455078125em;
-  color: rgb(255, 92, 243);
-}
-.icon-cloud-vision-api .path4:before {
-  content: "\e915";
-  margin-left: -1.1455078125em;
-  color: rgb(72, 49, 242);
 }
 .icon-histogram .path1:before {
   content: "\e916";
