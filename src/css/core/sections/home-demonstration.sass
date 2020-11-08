@@ -1,5 +1,16 @@
 .demonstration
+  position: relative
   margin-top: 150px
+
+  > .container
+    position: relative
+
+  &__dot
+    position: absolute
+    top: 0
+    right: 16%
+    width: 212px
+    height: 80px
 
   &__title
     margin-bottom: 60px
@@ -84,6 +95,10 @@
 
   .demonstration
     margin-top: 110px
+    overflow: hidden
+
+    &__dot
+      right: 13%
 
     &__title
       margin-bottom: 100px
@@ -110,6 +125,9 @@
 
 @media screen and (max-width: 768px)
   .demonstration
+    &__dot
+      right: -30%
+
     &__title
       margin-bottom: 90px
 

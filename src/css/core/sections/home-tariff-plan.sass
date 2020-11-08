@@ -1,7 +1,15 @@
 .tariff-plan
+  position: relative
   background: #FDFBF5
   margin-top: 150px
   padding: 85px 150px
+
+  &__dot
+    position: absolute
+    bottom: -10px
+    left: 40%
+    width: 212px
+    height: 168px
 
   &__wrapper
     display: flex
@@ -56,6 +64,13 @@
 
     &__calculator
       margin: 70px auto 0
+
+@media screen and (max-width: 991px)
+  .tariff-plan__dot
+    top: -20px
+    right: 0
+    left: unset
+    bottom: unset
 
 @media screen and (max-width: 578px)
   .tariff-plan
