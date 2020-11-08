@@ -1,4 +1,4 @@
 require('./parts/header')
-// require('./pages/index')
+require('./parts/modal')
 
 console.log('[APP]: App is work')

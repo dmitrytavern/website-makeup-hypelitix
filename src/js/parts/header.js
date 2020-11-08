@@ -19,7 +19,6 @@ function toggleHeaderMenu() {
 	$menu.toggleClass('is-open')
 }
 
-console.log($headerMenuBtn)
 $($headerMenuBtn).on('click', toggleHeaderMenu)
 
 $(window).on('resize', scrollPage)

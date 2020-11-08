@@ -10,7 +10,7 @@ body
 
 	include ../components/telegram
 
-	div
+	div.body-content
 		block header
 			+header()
 
@@ -20,4 +20,5 @@ body
 	block footer
 		+footer()
 
+	include ../components/modals
 	include parts/scripts
