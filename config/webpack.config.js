@@ -74,7 +74,7 @@ const rules = {
 		}
 	},
 	fonts: {
-		test: /\.woff$|\.ttf$|\.wav$|\.mp3$/,
+		test: /\.woff$|\.ttf$|\.wav$|\.mp3$|\.eot$/,
 		use: [
 			{
 				loader: 'file-loader',

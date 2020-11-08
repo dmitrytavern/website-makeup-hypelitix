@@ -1,6 +1,6 @@
 // Fonts
 
-$font: 'Raleway';
+$font: 'TTCommons';
 $font-size: 19px;
 $font-weight: normal;
 $line-height: unset;
@@ -90,7 +90,7 @@ $link-color-active: #4831F2;
 $btn-border-radius: 2px;
 $btn-transition: all .3s;
 
-$btn-font: $font;
+$btn-font: 'TTCommons Medium', sans-serif;
 $btn-font-weight: 500;
 $btn-font-size: 17px;
 $btn-padding: 16px 40px;
