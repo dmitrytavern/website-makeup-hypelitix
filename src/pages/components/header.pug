@@ -2,7 +2,7 @@ mixin header(theme)
     header.header( class=theme === undefined ? '' : theme )
         .container
             .row
-                .col-9.col-md-5.col-lg-3.header__column
+                .col-7.col-md-5.col-lg-3.header__column
                     h1.logo Hype<span>litix</span>
                     .header__lang
                         .dropdown.dropdown-lang
@@ -17,7 +17,7 @@ mixin header(theme)
                                 a.dropdown-item(href="#")
                                     img( src="#" )
 
-                .col-3.col-md-2.col-lg-6.header__column
+                .col-5.col-md-2.col-lg-6.header__column
                     .header__menu
                         span
                         span
@@ -38,9 +38,10 @@ mixin header(theme)
                                 a(href="#") Log In
 
                 .col-md-5.col-lg-3.header__column
-                    a(href="#")
-                        i
-                    a(href="#")
-                        i
-                    a(href="#")
-                        i
+                    .header__contacts
+                        a(href="#")
+                            i.icon-contact-telegram
+                        a(href="#")
+                            i.icon-contact-whatsapp
+                        a(href="#")
+                            i.icon-contact-viber
