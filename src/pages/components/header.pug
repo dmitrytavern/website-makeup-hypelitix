@@ -18,24 +18,17 @@ mixin header(theme)
                                     img( src="#" )
 
                 .col-5.col-md-2.col-lg-6.header__column
-                    .header__menu
+                    .header__menu#header-menu-btn
                         span
                         span
                         span
 
                     nav.header__nav
                         ul
-                            li
-                                a(href="#") About Us
-
-                            li
-                                a(href="#") Prices
-
-                            li
-                                a(href="#") Contact Us
-
-                            li
-                                a(href="#") Log In
+                            li <a href="#">About Us</a>
+                            li <a href="#">Prices</a>
+                            li <a href="#">Contact Us</a>
+                            li <a href="#">Log In</a>
 
                 .col-md-5.col-lg-3.header__column
                     .header__contacts
@@ -45,3 +38,38 @@ mixin header(theme)
                             i.icon-contact-whatsapp
                         a(href="#")
                             i.icon-contact-viber
+
+    .menu
+        .menu__wrapper
+            .menu__content
+                .menu__header
+                    .menu__lang
+                        .dropdown.dropdown-lang
+                            .btn.dropdown-btn(data-toggle='dropdown' class='btn-secondary')
+                                .dropdown-content
+                                    img( src="#" )
+
+                                svg.dropdown-ico(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width="17" height="17" stroke='currentColor' stroke-width='2')
+                                    polyline(points='6 9 12 15 18 9')
+
+                            .dropdown-menu
+                                a.dropdown-item(href="#")
+                                    img( src="#" )
+
+                    a.menu__login(href="#") Log In
+
+                .menu__body
+                    ul.list
+                        li.is-active <a href="#">About Us</a>
+                        li <a href="#">Prices</a>
+                        li <a href="#">Contact Us</a>
+
+            .menu__footer
+                .menu__email <a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a>
+                .menu__contacts
+                    a(href="#")
+                        i.icon-contact-telegram
+                    a(href="#")
+                        i.icon-contact-whatsapp
+                    a(href="#")
+                        i.icon-contact-viber

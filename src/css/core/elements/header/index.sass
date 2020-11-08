@@ -1,10 +1,12 @@
 .header
-  position: absolute
+  transition: .18s
+  position: fixed
   padding: 40px 0
   width: 100%
   top: 0
   left: 0
   z-index: 100
+  border-bottom: 2px solid rgba(#f8f8f8, 0)
 
   &__lang
     margin-left: 100px
@@ -14,6 +16,8 @@
     align-items: center
 
   &__menu
+    transition: all .3s
+    position: relative
     width: 52px
     height: 38px
     background: #ffffff
@@ -25,13 +29,38 @@
     margin: 0 auto
 
     span
+      transition: all .3s
+      position: absolute
+      top: 50%
       width: 18px
       height: 2px
       background: #000
 
+    span:first-child
+      transform: translateY(-8px)
+
     span:nth-child(2)
       width: 22px
-      margin: 5px 0
+      transform: translateY(-1px)
+
+    span:last-child
+      transform: translateY(6px)
+
+    &.is-active
+      background: #000000
+
+      span
+        background: #ffffff
+
+        &:first-child
+          transform: translateY(-1px) rotate(45deg)
+
+        &:nth-child(2)
+          display: none
+
+        &:last-child
+          transform: translateY(-1px) rotate(-45deg)
+
 
   &__nav
     display: none
@@ -52,6 +81,7 @@
       &:last-child
         margin-right: 0
 
+
   &__contacts
     margin-left: auto
 
@@ -64,6 +94,10 @@
         margin-left: 0
       &:last-child
         margin-right: 0
+
+  &.is-scroll
+    background: #ffffff
+    border-color: #F8F8F8
 
 @media screen and (min-width: 993px)
   .header
