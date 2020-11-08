@@ -26,6 +26,6 @@ if (devMode) console.log('[APP]: Add jQuery')
 * */
 
 require('bootstrap/js/dist/dropdown')
-require('bootstrap/js/dist/collapse')
+// require('bootstrap/js/dist/collapse')
 // require('bootstrap/js/dist/modal')
 if (devMode) console.log('[APP]: Add Bootstrap')
