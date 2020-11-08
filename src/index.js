@@ -11,6 +11,8 @@ import './css/core.sass'
 /*
 * 	Import svg
 * */
+import './img/sprite/lang-gb.svg'
+import './img/sprite/lang-ru.svg'
 
 
 /*

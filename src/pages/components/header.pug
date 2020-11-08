@@ -5,17 +5,8 @@ mixin header(theme)
                 .col-7.col-md-5.col-lg-3.header__column
                     h1.logo Hype<span>litix</span>
                     .header__lang
-                        .dropdown.dropdown-lang
-                            .btn.dropdown-btn(data-toggle='dropdown' class='btn-secondary')
-                                .dropdown-content
-                                    img( src="#" )
+                        include ../components/lang
 
-                                svg.dropdown-ico(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width="17" height="17" stroke='currentColor' stroke-width='2')
-                                    polyline(points='6 9 12 15 18 9')
-
-                            .dropdown-menu
-                                a.dropdown-item(href="#")
-                                    img( src="#" )
 
                 .col-5.col-md-2.col-lg-6.header__column
                     .header__menu#header-menu-btn
@@ -44,17 +35,7 @@ mixin header(theme)
             .menu__content
                 .menu__header
                     .menu__lang
-                        .dropdown.dropdown-lang
-                            .btn.dropdown-btn(data-toggle='dropdown' class='btn-secondary')
-                                .dropdown-content
-                                    img( src="#" )
-
-                                svg.dropdown-ico(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' width="17" height="17" stroke='currentColor' stroke-width='2')
-                                    polyline(points='6 9 12 15 18 9')
-
-                            .dropdown-menu
-                                a.dropdown-item(href="#")
-                                    img( src="#" )
+                        include ../components/lang
 
                     a.menu__login(href="#") Log In
 

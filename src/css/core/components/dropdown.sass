@@ -6,6 +6,7 @@
 		transform: unset !important
 		top: 100% !important
 		display: block
+		border: none
 
 		&.show
 			@include visibility-visible
@@ -27,6 +28,33 @@
 
 
 .dropdown-lang
-	.dropdown-content img
+	&__ico
 		max-width: 25px
 		max-height: 18px
+		display: block
+
+	.dropdown-menu
+		background: $color-secondary
+		border-radius: 0
+		padding: 12px 0
+
+	.dropdown-item
+		display: flex
+		align-items: center
+		font-size: 17px
+		margin: 24px 0
+		padding: 0 24px
+		background: none !important
+		color: #000 !important
+
+		> svg
+			margin-right: 15px
+
+		> span
+			margin-top: 4px
+
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+
