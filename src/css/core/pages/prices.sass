@@ -1,0 +1,60 @@
+.prices
+  padding-top: 220px
+  padding-bottom: 150px
+
+  &__title
+    margin-bottom: 80px
+    position: relative
+    z-index: 2
+    grid-column: 1
+    grid-row: 1
+
+    > h1
+      margin: 0
+
+    > span
+      display: block
+      background: #FBEDCF
+      width: 100%
+      max-width: 230px
+      height: 6px
+      margin-top: 15px
+
+  &__description
+    margin-bottom: 50px
+    max-width: 1210px
+
+  &__alert
+    display: flex
+    align-items: center
+    font-family: 'TTCommons Italic', sans-serif
+    margin-top: 25px
+    font-size: 18px
+    color: #2B2B2B
+
+    > i
+      font-size: 28px
+      margin-right: 15px
+
+  &__window
+    text-align: center
+    margin-top: 30px
+
+    > h2
+      margin-top: 20px
+      margin-bottom: 20px
+
+    > .btn
+      margin-top: 40px
+
+    > i
+      font-size: 90px
+
+
+@media screen and (min-width: 1100px)
+  .prices
+    &__window
+      margin-top: 0
+      position: -webkit-sticky
+      position: sticky
+      top: 180px

@@ -1,0 +1,156 @@
+extends layout/inner
+
+block content
+    -
+        var array = [
+          {
+              accounts: "100",
+              discount: "0.00%",
+              syncPrice: "0.01",
+              servicePrice: "$0.60",
+          },
+          {
+              accounts: "500",
+              discount: "2.60%",
+              syncPrice: "0.0097",
+              servicePrice: "$0.58",
+          },
+          {
+              accounts: "1000",
+              discount: "5.40%",
+              syncPrice: "0.0095",
+              servicePrice: "$0.57",
+          },
+          {
+              accounts: "2000",
+              discount: "8.00%",
+              syncPrice: "0.092",
+              servicePrice: "$0.55",
+          },
+          {
+              accounts: "4000",
+              discount: "10.00%",
+              syncPrice: "0.0090",
+              servicePrice: "$0.54",
+          },
+          {
+              accounts: "6000",
+              discount: "13.30%",
+              syncPrice: "0.0087",
+              servicePrice: "$0.52",
+          },
+          {
+              accounts: "8000",
+              discount: "16.00%",
+              syncPrice: "0.0081",
+              servicePrice: "$0.49",
+          },
+          {
+              accounts: "10000",
+              discount: "18.60%",
+              syncPrice: "0.0081",
+              servicePrice: "$0.49",
+          },
+          {
+              accounts: "15000",
+              discount: "21.30%",
+              syncPrice: "0.0079",
+              servicePrice: "$0.47",
+          },
+          {
+              accounts: "20000",
+              discount: "24.00%",
+              syncPrice: "0.0076",
+              servicePrice: "$0.46",
+          },
+          {
+              accounts: "25000",
+              discount: "26.60%",
+              syncPrice: "0.0073",
+              servicePrice: "$0.44",
+          },
+          {
+              accounts: "30000",
+              discount: "30.00%",
+              syncPrice: "0.0070",
+              servicePrice: "$0.42",
+          },
+          {
+              accounts: "35000",
+              discount: "32.00%",
+              syncPrice: "0.0064",
+              servicePrice: "$0.41",
+          },
+          {
+              accounts: "40000",
+              discount: "36.50%",
+              syncPrice: "0.0064",
+              servicePrice: "$0.38",
+          },
+          {
+              accounts: "45000",
+              discount: "37.30%",
+              syncPrice: "0.0063",
+              servicePrice: "$0.38",
+          },
+          {
+              accounts: "50000",
+              discount: "40.00%",
+              syncPrice: "0.0060",
+              servicePrice: "$0.36",
+          }
+      ]
+
+    section.prices
+        .container
+            .prices__title
+                h1 Prices
+                span
+
+            p.prices__description
+                | Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
+                | It's a paid web-service which provides publicly available Instagram profiles data in an automated and
+                | generalized way making it easier to analyze data for it's clients. Specifically.
+
+            .row
+                .col-12.col-lg-8
+                    table.table
+                        tr.table__head
+                            th Кол-во аккаунтов (до)
+                            th Скидка %
+                            th Стоимость синхронизации <br/> (USD)
+                            th Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
+
+                        for item in array
+                          tr
+                            th= item.accounts
+                            th= item.discount
+                            th= item.syncPrice
+                            th= item.servicePrice
+
+                    .prices__alert
+                        i.icon-alert-2
+                            span.path1
+                            span.path2
+                            span.path3
+                        span Individual price offers for orders over 50,000 accounts
+
+                .col-12.col-lg-4
+                    .prices__window
+                        i.icon-click
+                            span.path1
+                            span.path2
+                            span.path3
+                            span.path4
+                            span.path5
+                            span.path6
+                            span.path7
+                            span.path8
+                            span.path9
+                            span.path10
+                            span.path11
+                            span.path12
+
+                        h2 Access Request
+                        p Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
+                        .btn.btn-primary( data-toggle="modal" data-target="#modal-access" ) Get Access

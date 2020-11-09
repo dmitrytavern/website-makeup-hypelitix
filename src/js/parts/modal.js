@@ -6,6 +6,9 @@ $('.modal').on('hide.bs.modal', function () {
 	$('.modal-custom-backdrop').removeClass('is-open')
 })
 
+$('.modal-custom-backdrop').on('click', function () {
+	$('.modal').modal('toggle')
+})
 
 function activateError(name) {
 	$(`#modal-access form input[name="${name}"]`).addClass('is-error')
