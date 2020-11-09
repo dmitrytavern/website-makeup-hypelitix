@@ -1,34 +1,35 @@
 mixin header(theme)
-    header.header( class=theme === undefined ? '' : theme )
+    header.header( class=theme )
         .container
-            .row
-                .col-7.col-md-5.col-lg-3.header__column
-                    h1.logo Hype<span>litix</span>
-                    .header__lang
-                        include ../components/lang
+            .header__wrapper
+                .row
+                    .col-7.col-md-5.col-lg-3.header__column
+                        h1.logo Hype<span>litix</span>
+                        .header__lang
+                            include ../components/lang
 
 
-                .col-5.col-md-2.col-lg-6.header__column
-                    .header__menu#header-menu-btn
-                        span
-                        span
-                        span
+                    .col-5.col-md-2.col-lg-6.header__column
+                        .header__menu#header-menu-btn
+                            span
+                            span
+                            span
 
-                    nav.header__nav
-                        ul
-                            li <a href="#">About Us</a>
-                            li <a href="#">Prices</a>
-                            li <a href="#">Contact Us</a>
-                            li <a href="#">Log In</a>
+                        nav.header__nav
+                            ul
+                                li <a href="#">About Us</a>
+                                li <a href="#">Prices</a>
+                                li <a href="#">Contact Us</a>
+                                li <a href="#">Log In</a>
 
-                .col-md-5.col-lg-3.header__column
-                    .header__contacts
-                        a(href="#")
-                            i.icon-contact-telegram
-                        a(href="#")
-                            i.icon-contact-whatsapp
-                        a(href="#")
-                            i.icon-contact-viber
+                    .col-md-5.col-lg-3.header__column
+                        .header__contacts
+                            a(href="#")
+                                i.icon-contact-telegram
+                            a(href="#")
+                                i.icon-contact-whatsapp
+                            a(href="#")
+                                i.icon-contact-viber
 
     .menu
         .menu__wrapper

@@ -1,12 +1,15 @@
 .header
   transition: .18s
   position: fixed
-  padding: 40px 0
   width: 100%
   top: 0
   left: 0
   z-index: 100
-  border-bottom: 2px solid rgba(#f8f8f8, 0)
+
+  &__wrapper
+    padding-top: 40px
+    padding-bottom: 40px
+    border-bottom: 2px solid rgba(#f8f8f8, 0)
 
   &__lang
     margin-left: 100px
@@ -95,9 +98,12 @@
       &:last-child
         margin-right: 0
 
-  &.is-scroll
+  &.is-scroll,
+  &.is-active
     background: #ffffff
-    border-color: #F8F8F8
+
+    .header__wrapper
+      border-color: #F8F8F8
 
 @media screen and (min-width: 993px)
   .header
@@ -121,7 +127,9 @@
 
 @media screen and (max-width: 1439px)
   .header
-    padding: 35px 0
+    &__wrapper
+      padding-top: 35px
+      padding-bottom: 35px
 
     &__lang
       margin-left: 55px

@@ -1,0 +1,23 @@
+include ../components/header
+include ../components/footer
+include ../components/dropdown
+
+doctype html
+head
+	include parts/head
+	include parts/styles
+body
+
+	include ../components/telegram
+
+	div.body-content
+		block header
+			+header('is-active')
+
+		main
+			block content
+
+	block footer
+		+footer()
+
+	include parts/scripts
