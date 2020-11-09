@@ -1,0 +1,52 @@
+extends layout/inner
+
+block content
+    section.contacts
+        .container
+            .row
+                .col-12.col-lg-6
+                    .contacts__title
+                        h1 Our Contacts
+                        span
+
+                    p.contacts__description Upload the list of accounts using the administrative panel or via the corresponding API method.
+
+                    .contacts__contacts
+                        .contacts__contact
+                            span Email:
+                            span <a href="mailto:contact@hypelitix.com">contact@hypelitix.com</a>
+
+                        .contacts__contact
+                            span Phone:
+                            span <a href="tel:+380931539090">+380 93 153 90 90</a>
+
+                    .contacts__media
+                        a(href="#")
+                            i.icon-contact-telegram
+                        a(href="#")
+                            i.icon-contact-whatsapp
+                        a(href="#")
+                            i.icon-contact-viber
+
+                .col-12.col-lg-6
+                    .contacts__form-question.form-question
+                        img(src=require('../img/dots-1.png').default).form-question__dot
+                        .form-question__wrapper
+                            h2.form-question__title Have Question? Ask us!
+
+                            form
+                                .input-group.form-question__input.is-requied
+                                    .input__label Name
+                                    input( type="text" name="fullname" placeholder="Full Name" required)
+                                    .input__error
+                                        i !
+                                        | Wrong name
+
+                                .input-group.form-question__input.is-requied
+                                    .input__label Email
+                                    input( type="email" name="email" placeholder="Email")
+                                    .input__error
+                                        i !
+                                        | Wrong Email address
+
+                                button( type="submit" ).btn.btn-primary.form-question__btn Send
