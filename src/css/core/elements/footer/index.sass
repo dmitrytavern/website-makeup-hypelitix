@@ -30,17 +30,31 @@
     font-family: 'TTCommons Medium', sans-serif
 
   &__contacts
-    a
+    > a
       display: block
 
-    a:first-child
+    > a:first-child
       margin-bottom: 17px
+
+    &-media
+      display: none
+      margin-top: 20px
+
+      a
+        font-size: 24px
+        margin: 0 16px
+        vertical-align: bottom
+
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
 
 @media screen and (max-width: 991px)
   .footer
     background: #FAFAFA
     padding-top: 50px
-    padding-bottom: 120px
+    padding-bottom: 90px
     margin-top: 120px
 
     &__logo
@@ -51,12 +65,26 @@
         margin-bottom: 40px
 
     &__navigation
-      padding-left: 00px
+      padding-left: 0
+
+    &__contacts-media
+      display: block
 
 @media screen and (max-width: 767px)
   .footer
     &__navigation
       margin-bottom: 50px
+
+    &__contacts
+      &-tel
+        float: left
+
+      &-media
+        float: right
+        margin-top: 0
+
+        > a
+          font-size: 19px
 
 @media screen and (max-width: 420px)
   .footer
