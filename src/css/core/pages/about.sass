@@ -1,6 +1,18 @@
 .about
-  margin-top: 220px
+  margin-top: 180px
+  padding-top: 30px
   overflow: hidden
+
+  > .container
+    position: relative
+
+  &__dot
+    position: absolute
+    top: -30px
+    right: -40px
+    width: 212px
+    height: 168px
+    z-index: 3
 
   &__content
     position: relative
@@ -44,7 +56,11 @@
 
 @media screen and (max-width: 1439px)
   .about
-    margin-bottom: 120px
+    margin-bottom: 70px
+    padding-top: 50px
+
+    &__dot
+      top: -50px
 
 @media screen and (min-width: 768px) and (max-width: 1100px)
   .about
@@ -60,6 +76,9 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px)
   .about
+    &__dot
+      right: -190px
+
     &__content
       grid-template-columns: 68%
 
@@ -73,7 +92,11 @@
 @media screen and (max-width: 767px)
 
   .about
-    margin-top: 200px
+    margin-top: 170px
+
+    &__dot
+      top: 110px
+      right: -77px
 
     &__content
       display: block
