@@ -8,10 +8,10 @@ $line-height: unset;
 
 // Heading
 
-$h1-font-size: 42px;
-$h2-font-size: 38px;
-$h3-font-size: 28px;
-$h4-font-size: 22px;
+$h1-font-size: calc(36px + 31 * ((100vw - 375px) / 1545));
+$h2-font-size: calc(32px + 16 * ((100vw - 375px) / 1545));
+$h3-font-size: calc(24px + 6 * ((100vw - 375px) / 1545));
+$h4-font-size: calc(18px + 6 * ((100vw - 375px) / 1545));
 
 
 // Color
