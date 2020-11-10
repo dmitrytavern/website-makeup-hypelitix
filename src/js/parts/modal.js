@@ -14,10 +14,6 @@ function activateError(name) {
 	$(`#modal-access form input[name="${name}"]`).addClass('is-error')
 }
 
-$('#modal-access form input').on('focus', function () {
-	$(this).removeClass('is-error')
-})
-
 $('#modal-access form').submit(function (e) {
 	e.preventDefault()
 
