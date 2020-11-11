@@ -4,24 +4,16 @@
 
   &__title
     margin-bottom: 80px
-    position: relative
-    z-index: 2
-    grid-column: 1
-    grid-row: 1
+    display: inline-block
 
-    > h1
-      margin: 0
-
-    > span
-      display: block
-      background: #FBEDCF
-      width: 100%
-      max-width: 230px
-      height: 6px
-      margin-top: 15px
+    > .line
+      max-width: 100%
 
   &__description
     margin-bottom: 70px
+
+  &__contacts
+    margin-bottom: 40px
 
   &__contact
     margin-bottom: 40px
@@ -30,19 +22,6 @@
     > span:first-child
       margin-right: 30px
       color: $color-primary
-
-  &__media
-    margin-top: 40px
-
-    a
-      font-size: 24px
-      margin: 0 16px
-      vertical-align: bottom
-
-      &:first-child
-        margin-left: 0
-      &:last-child
-        margin-right: 0
 
 @media screen and (min-width: 768px) and (max-width: 991px)
   .contacts
@@ -57,9 +36,5 @@
       margin-top: 90px
 
 @media screen and (max-width: 767px)
-  .contacts
-    margin-top: 200px
-    margin-bottom: 130px
-
-    &__description
+  .contacts__description
       margin-bottom: 50px

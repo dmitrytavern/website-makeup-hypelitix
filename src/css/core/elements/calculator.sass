@@ -124,13 +124,6 @@
         background: #000
         border-radius: 50%
 
-    &:nth-child(1)
-      transform: rotate(0) translateY(-50%)
-
-    @for $i from 2 through 16
-      &:nth-child(#{$i})
-        transform: rotate(($i - 1) * 22.5deg) translateY(-50%)
-
   &__btn
     margin-top: 70px
 

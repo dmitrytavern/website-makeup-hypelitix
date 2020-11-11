@@ -1,4 +1,5 @@
-.list
+.list,
+.inner-page__content ul
   > li
     padding-left: 21px
     margin: 20px 0
@@ -6,15 +7,15 @@
 
     &:first-child
       margin-top: 0
+
     &:last-child
       margin-bottom: 0
 
-    &:before
-      position: absolute
-      top: 9px
-      left: 0
-      content: ''
-      width: 6px
-      height: 6px
-      background: $color-primary
-      border-radius: 50%
+    &::before
+      content: "\2022"
+      font-size: 23px
+      color: $color-primary
+      font-weight: bold
+      display: inline-block
+      width: 1em
+      margin-left: -1em

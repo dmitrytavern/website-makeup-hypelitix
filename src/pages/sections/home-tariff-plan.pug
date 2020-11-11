@@ -1,5 +1,5 @@
 section.tariff-plan
-    img.tariff-plan__dot( src=require('../../img/dots-3.png').default )
+    img.tariff-plan__dot.decor-dot.dot-2( src=require('../../img/dots-3.png').default )
     .container
         .tariff-plan__wrapper
             .tariff-plan__content
@@ -20,7 +20,12 @@ section.tariff-plan
                             ) <span></span>
 
                     .calculator__dots
-                        .calculator__dot( v-for="(plan, index) in plans" :class="{'is-active': plan.active}" @dragstart="() => false" )
+                        .calculator__dot(
+                                v-for="(plan, index) in plans"
+                                :class="{'is-active': plan.active}"
+                                :style="{transform: `rotate(${index * 22.5}deg) translateY(-50%)`}"
+                                @dragstart="() => false"
+                            )
                             span( @click="changePlan(index)" @mouseover="toPlan(index)" @dragstart="() => false" )
 
                     .calculator__content( :class="{'is-no-select': moving}" )
