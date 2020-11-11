@@ -6,29 +6,31 @@ new Vue({
 		moving: false,
 		positionStartMovingX: 0,
 		positionStartMovingY: 0,
+		activePlan: {active: true, accounts: 500, price: '$0.58'},
 		plans: [
-			{active: true},
-			{active: true},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
-			{active: false},
+			{active: true, accounts: 100, price: '$0.60'},
+			{active: true, accounts: 500, price: '$0.58'},
+			{active: false, accounts: 1000, price: '$0.57'},
+			{active: false, accounts: 2000, price: '$0.55'},
+			{active: false, accounts: 4000, price: '$0.54'},
+			{active: false, accounts: 6000, price: '$0.52'},
+			{active: false, accounts: 8000, price: '$0.49'},
+			{active: false, accounts: 10000, price: '$0.49'},
+			{active: false, accounts: 15000, price: '$0.47'},
+			{active: false, accounts: 20000, price: '$0.46'},
+			{active: false, accounts: 25000, price: '$0.44'},
+			{active: false, accounts: 30000, price: '$0.42'},
+			{active: false, accounts: 35000, price: '$0.41'},
+			{active: false, accounts: 40000, price: '$0.38'},
+			{active: false, accounts: 45000, price: '$0.38'},
+			{active: false, accounts: 50000, price: '$0.36'},
 		],
 	},
 	computed: {
 		activePlans() {
 			return this.plans.filter(x => x.active).length
 		},
+
 		roundStyle() {
 			let val = 90 + (22.5 * (this.activePlans - 1))
 
@@ -41,7 +43,7 @@ new Vue({
 			let percent = 100 * ((this.activePlans - 1) * 22.5) / 360
 			let val = 0
 
-			if (window.innerWidth > 568) {
+			if (window.innerWidth > 567) {
 				val = Math.floor(1382 - (1382 * percent) / 100) + (this.activePlans - 1) * 0.69
 			} else {
 				val = Math.floor(941 - (941 * percent) / 100)
@@ -54,8 +56,9 @@ new Vue({
 	},
 	methods: {
 		changePlan(indexPlan) {
-			this.plans.map(function (plan, index) {
+			this.plans.map((plan, index) => {
 				if (index <= indexPlan) plan.active = true
+				if (index === indexPlan) this.activePlan = plan
 				if (index > indexPlan) plan.active = false
 			})
 		},
@@ -66,24 +69,6 @@ new Vue({
 			this.changePlan(indexPlan)
 		},
 
-		nextPlan() {
-			console.log('Next Plan')
-			let length = this.activePlans
-
-			if (length < 0 || length >= 16) return
-
-			this.plans[this.activePlans].active = true
-		},
-
-		prevPlan() {
-			console.log('Prev Plan')
-			let length = this.activePlans
-
-			if (length <= 1 || length > 16) return
-
-			this.plans[length - 1].active = false
-		},
-
 		roundMouseDown(e) {
 			console.log('Down', e)
 			this.moving = true
@@ -92,33 +77,6 @@ new Vue({
 		},
 	},
 	mounted() {
-		window.addEventListener('mousemove', (e) => {
-			if (!this.moving) return
-			const positionX = e.pageX
-			const positionY = e.pageY
-
-			// const movingX = positionX - this.positionStartMovingX
-			// const movingY = positionY - this.positionStartMovingY
-			//
-			// if (movingX > 0) {
-			// 	// Prev plan
-			// 	const count = Math.floor(movingX / 50)
-			// 	for (let i = 0; count > i; i++) {
-			// 		this.positionStartMovingX += 50
-			// 		this.nextPlan()
-			// 	}
-			// } else {
-			// 	// Next plan
-			// 	const count = Math.floor(Math.abs(movingX) / 50)
-			// 	for (let i = 0; count > i; i++) {
-			// 		this.positionStartMovingX -= 50
-			// 		this.prevPlan()
-			// 	}
-			// }
-
-			console.log('Move', this.moving)
-		})
-
 		window.addEventListener('mouseup', () => {
 			this.moving = false
 		})

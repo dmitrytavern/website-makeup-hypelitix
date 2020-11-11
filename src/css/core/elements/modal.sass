@@ -5,6 +5,8 @@
 .modal
   @include visibility-hidden
 
+  max-width: 100%
+  padding: 0 20px
   transition: all .3s
   position: fixed
   top: 50%
@@ -38,18 +40,17 @@
 
   &__title
     text-align: center
-    font-size: 38px
     margin-bottom: 55px
 
   &__subtitle
-    font-size: 28px
+    font-size: calc(28px + 6 * ((100vw - 375px) / 1545))
     margin-bottom: 30px
 
   &__input
     margin-top: 30px
 
     > input
-      min-width: 375px
+      width: 100%
 
     &:last-child
       margin-bottom: 0
@@ -90,8 +91,26 @@
   &__tab
     display: none
 
-    [data-name="success"]
+    &[data-name="success"]
       text-align: center
 
     &.is-active
       display: block
+
+@media screen and (min-width: 768px)
+  .modal__input
+    > input
+      min-width: 375px
+
+@media screen and (max-width: 767px)
+  .modal
+    width: 100%
+    max-width: 480px
+
+    &__wrapper
+      padding-left: 20px
+      padding-right: 20px
+
+    &__close
+      top: 8px
+      right: 8px

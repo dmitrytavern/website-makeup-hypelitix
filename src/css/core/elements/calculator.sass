@@ -4,11 +4,39 @@
   align-items: center
 
   &__wrapper
+    @include flex-full-center
+
     position: relative
     width: 434px
     height: 434px
     border-radius: 50%
     background: #ffffff
+
+  &__content
+    position: relative
+    display: inline-flex
+    flex-direction: column
+    align-self: center
+    text-align: center
+    font-size: 20px
+    z-index: 5
+
+    &-price
+      font-size: 50px
+      font-family: 'TTCommons Bold', sans-serif
+      font-weight: bold
+      margin-bottom: 10px
+
+    &-account
+      font-family: 'TTCommons Bold', sans-serif
+      margin-top: 50px
+
+      span
+        color: $color-primary
+        font-size: 30px
+
+    &.is-no-select
+      user-select: none
 
   &__progress
     position: absolute
@@ -26,6 +54,8 @@
       circle
         transform: translate(5px, 5px)
         fill: none
+
+        transition: .1s
         stroke-width: 10
         stroke: #4831F2
         stroke-dasharray: 1382
@@ -38,6 +68,7 @@
           stroke-dashoffset: 941
 
     &-round
+      transition: .1s
       position: absolute
       width: calc(50% + 11px)
       height: 24px
@@ -56,7 +87,9 @@
 
   &__dots
     transform: rotate(90deg)
-    position: relative
+    position: absolute
+    top: 0
+    left: 0
     width: 100%
     height: 100%
 
@@ -101,7 +134,22 @@
   &__btn
     margin-top: 70px
 
-@media screen and (max-width: 568px)
+@media screen and (max-width: 767px)
+  .calculator
+    &__content
+      font-size: 16px
+
+      &-price
+        font-size: 40px
+
+      &-account
+        margin-top: 40px
+        font-size: 18px
+
+        span
+          font-size: 28px
+
+@media screen and (max-width: 567px)
   .calculator
 
     &__progress-line

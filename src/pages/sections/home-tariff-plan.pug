@@ -5,7 +5,7 @@ section.tariff-plan
             .tariff-plan__content
                 h2 Calculate Your Own Tariff Plan
                 p Flexible Billing System. Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.
-                .tariff-plan__btn.btn.btn-primary Automate your Analytics
+                .tariff-plan__btn.btn.btn-primary(data-toggle="modal" data-target="#modal-access") Automate your Analytics
 
             div.tariff-plan__calculator.calculator#calculator
                 | {{ activePlans }}
@@ -24,4 +24,9 @@ section.tariff-plan
                         .calculator__dot( v-for="(plan, index) in plans" :class="{'is-active': plan.active}" @dragstart="() => false" )
                             span( @click="changePlan(index)" @mouseover="toPlan(index)" @dragstart="() => false" )
 
-                .calculator__btn.tariff-plan__btn.btn.btn-primary Automate your Analytics
+                    .calculator__content( :class="{'is-no-select': moving}" )
+                        span.calculator__content-price.h2 {{ activePlan.price }}
+                        span (for 1 acc per month)
+                        span.calculator__content-account up to <span>{{ activePlan.accounts }}</span> accounts
+
+                .calculator__btn.tariff-plan__btn.btn.btn-primary(data-toggle="modal" data-target="#modal-access") Automate your Analytics
