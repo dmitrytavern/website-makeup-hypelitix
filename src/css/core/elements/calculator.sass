@@ -45,6 +45,7 @@
       transform-origin: 100% 0
       top: 50%
       left: -10px
+      z-index: 3
 
       > span
         display: block
@@ -70,16 +71,25 @@
     left: -2px
 
     &.is-active
-      > span
+      > span::before
         background: #ffffff
 
     > span
+      padding: 30px
+      margin-left: -30px
+      margin-top: -30px
       display: block
       width: 6px
       height: 6px
-      border-radius: 50%
-      background: #000
       cursor: pointer
+
+      &::before
+        display: block
+        content: ''
+        width: 6px
+        height: 6px
+        background: #000
+        border-radius: 50%
 
     &:nth-child(1)
       transform: rotate(0) translateY(-50%)

@@ -14,9 +14,13 @@ section.tariff-plan
                         svg.calculator__progress-line
                             circle( cx="218" cy="218" r="218" :style="circleStyle" )
 
-                        span.calculator__progress-round(:style="roundStyle") <span></span>
+                        span.calculator__progress-round(
+                            :style="roundStyle"
+                            @mousedown="roundMouseDown"
+                            ) <span></span>
 
                     .calculator__dots
-                        .calculator__dot( v-for="(plan, index) in plans" :class="{'is-active': plan.active}" @click="changePlan(index)" ) <span></span>
+                        .calculator__dot( v-for="(plan, index) in plans" :class="{'is-active': plan.active}" @click="changePlan(index)" @dragstart="() => false" )
+                            span( @mouseover="toPlan(index)" @dragstart="() => false" )
 
                 .calculator__btn.tariff-plan__btn.btn.btn-primary Automate your Analytics

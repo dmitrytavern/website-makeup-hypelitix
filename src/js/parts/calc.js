@@ -3,6 +3,9 @@ import Vue from 'vue/dist/vue.esm'
 new Vue({
 	el: '#calculator',
 	data: {
+		moving: false,
+		positionStartMovingX: 0,
+		positionStartMovingY: 0,
 		plans: [
 			{active: true},
 			{active: true},
@@ -41,7 +44,7 @@ new Vue({
 			return {
 				'stroke-dashoffset': val
 			}
-		}
+		},
 	},
 	methods: {
 		changePlan(indexPlan) {
@@ -50,5 +53,68 @@ new Vue({
 				if (index > indexPlan) plan.active = false
 			})
 		},
+
+		toPlan(indexPlan) {
+			if (!this.moving) return
+			console.log('Hover', indexPlan)
+			this.changePlan(indexPlan)
+		},
+
+		nextPlan() {
+			console.log('Next Plan')
+			let length = this.activePlans
+
+			if (length < 0 || length >= 16) return
+
+			this.plans[this.activePlans].active = true
+		},
+
+		prevPlan() {
+			console.log('Prev Plan')
+			let length = this.activePlans
+
+			if (length <= 1 || length > 16) return
+
+			this.plans[length - 1].active = false
+		},
+
+		roundMouseDown(e) {
+			console.log('Down', e)
+			this.moving = true
+			this.positionStartMovingX = e.pageX
+			this.positionStartMovingY = e.pageY
+		},
+	},
+	mounted() {
+		window.addEventListener('mousemove', (e) => {
+			if (!this.moving) return
+			const positionX = e.pageX
+			const positionY = e.pageY
+
+			// const movingX = positionX - this.positionStartMovingX
+			// const movingY = positionY - this.positionStartMovingY
+			//
+			// if (movingX > 0) {
+			// 	// Prev plan
+			// 	const count = Math.floor(movingX / 50)
+			// 	for (let i = 0; count > i; i++) {
+			// 		this.positionStartMovingX += 50
+			// 		this.nextPlan()
+			// 	}
+			// } else {
+			// 	// Next plan
+			// 	const count = Math.floor(Math.abs(movingX) / 50)
+			// 	for (let i = 0; count > i; i++) {
+			// 		this.positionStartMovingX -= 50
+			// 		this.prevPlan()
+			// 	}
+			// }
+
+			console.log('Move', this.moving)
+		})
+
+		window.addEventListener('mouseup', () => {
+			this.moving = false
+		})
 	}
 })
