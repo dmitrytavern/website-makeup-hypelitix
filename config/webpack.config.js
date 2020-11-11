@@ -79,7 +79,9 @@ const rules = {
 			{
 				loader: 'file-loader',
 				options: {
-					name: path.join(routeDist.fonts, '[name].[ext]'),
+					name: path.join('[name].[ext]'),
+					outputPath: 'fonts',
+					publicPath: '../fonts',
 				},
 			},
 		],
@@ -90,7 +92,9 @@ const rules = {
 			{
 				loader: 'file-loader',
 				options: {
-					name: path.join(routeDist.img, '[name].[ext]'),
+					name: path.join('[name].[ext]'),
+					publicPath: '/img',
+					outputPath: 'img',
 				},
 			},
 		],

@@ -27,7 +27,6 @@ const ImageminPlugin 						= require("imagemin-webpack");
 const entry = {
 	'vendor.min': path.join(resDir, 'index.js')
 }
-console.log(modeCompileCollect)
 if (modeCompileCollect) {
 	entry['app.min'] = path.join(resDir, 'js', 'app.js')
 }
