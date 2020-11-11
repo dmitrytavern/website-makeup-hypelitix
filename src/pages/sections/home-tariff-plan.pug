@@ -7,6 +7,16 @@ section.tariff-plan
                 p Flexible Billing System. Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.
                 .tariff-plan__btn.btn.btn-primary Automate your Analytics
 
-            div.tariff-plan__calculator.calculator
+            div.tariff-plan__calculator.calculator#calculator
+                | {{ activePlans }}
                 .calculator__wrapper
+                    .calculator__progress
+                        svg.calculator__progress-line
+                            circle( cx="218" cy="218" r="218" :style="circleStyle" )
+
+                        span.calculator__progress-round(:style="roundStyle") <span></span>
+
+                    .calculator__dots
+                        .calculator__dot( v-for="(plan, index) in plans" :class="{'is-active': plan.active}" @click="changePlan(index)" ) <span></span>
+
                 .calculator__btn.tariff-plan__btn.btn.btn-primary Automate your Analytics
