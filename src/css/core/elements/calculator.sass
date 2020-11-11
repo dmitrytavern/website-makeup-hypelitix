@@ -20,13 +20,11 @@
       top: -5px
       left: -5px
       transform: rotate(-90deg)
-      width: calc(100% + 10px)
+      width: calc(100% + 12px)
       height: calc(100% + 10px)
 
       circle
-        transform: translate(4px, 4px)
-        width: 217px
-        height: 217px
+        transform: translate(5px, 5px)
         fill: none
         stroke-width: 10
         stroke: #4831F2
@@ -34,13 +32,14 @@
         stroke-dashoffset: 1382
         stroke-linecap: round
 
-      // Test
-      circle:nth-child(1)
-        stroke-dashoffset: calc(1382 - (1382 * 6.25) / 100)
+        &:nth-child(2)
+          display: none
+          stroke-dasharray: 941
+          stroke-dashoffset: 941
 
     &-round
       position: absolute
-      width: calc(50% + 10px)
+      width: calc(50% + 11px)
       height: 24px
       transform-origin: 100% 0
       top: 50%
@@ -75,6 +74,7 @@
         background: #ffffff
 
     > span
+      -webkit-tap-highlight-color: rgba(#000, 0)
       padding: 30px
       margin-left: -30px
       margin-top: -30px
@@ -104,7 +104,24 @@
 @media screen and (max-width: 568px)
   .calculator
 
+    &__progress-line
+      width: calc(100% + 10px)
+
+      circle
+        &:nth-child(1)
+          display: none
+        &:nth-child(2)
+          display: block
+
     &__wrapper
       width: 300px
       height: 300px
       max-width: 100%
+
+    &__dot
+      left: -3px
+
+      > span
+        padding: 20px
+        margin-left: -20px
+        margin-top: -20px

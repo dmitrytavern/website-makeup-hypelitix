@@ -39,8 +39,14 @@ new Vue({
 		circleStyle() {
 			// 6.25% = 22.5deg
 			let percent = 100 * ((this.activePlans - 1) * 22.5) / 360
-			let val = Math.floor(1382 - (1382 * percent) / 100) + (this.activePlans - 1) * 0.69
-			console.log(val)
+			let val = 0
+
+			if (window.innerWidth > 568) {
+				val = Math.floor(1382 - (1382 * percent) / 100) + (this.activePlans - 1) * 0.69
+			} else {
+				val = Math.floor(941 - (941 * percent) / 100)
+			}
+
 			return {
 				'stroke-dashoffset': val
 			}
