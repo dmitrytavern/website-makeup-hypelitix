@@ -13,6 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-email .path1:before {
+  content: "\e92a";
+  color: rgb(206, 225, 242);
+}
+.icon-email .path2:before {
+  content: "\e92b";
+  margin-left: -1em;
+  color: rgb(72, 49, 242);
+}
+.icon-email .path3:before {
+  content: "\e92c";
+  margin-left: -1em;
+  color: rgb(255, 92, 240);
+}
 .icon-arrow-bottom:before {
   content: "\e929";
 }

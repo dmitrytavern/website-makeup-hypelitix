@@ -45,26 +45,27 @@
     li
       margin: 15px 0
       padding-left: 40px
+      line-height: unset
+      display: flex
+      align-items: center
 
       a
         font-size: calc(32px + 81 * ((100vw - 375px) / 1545))
         line-height: 102px
 
-      &:first-child
-        margin-top: 0
-      &:last-child
-        margin-bottom: 0
-      &:before
-        top: 44%
-        transform: translateY(-50%)
+      &::before
+        content: ''
+        border-radius: 50%
+        width: 6px
+        height: 6px
         background: #000000
+        margin-bottom: 10px
+        margin-right: 20px
 
       &.is-active
-        a
-          color: $color-primary
-
+        a,
         &:before
-          background: $color-primary
+          color: $color-primary
 
 
   // Footer
@@ -102,6 +103,3 @@
 
         a
           line-height: unset
-
-        &:before
-          top: 29%

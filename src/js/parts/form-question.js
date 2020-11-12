@@ -28,5 +28,6 @@ $('#contacts-form').submit(function (e) {
 	if (!error) {
 		// Send data
 		console.log('Data send')
+		$('.form-question__success-message').addClass('is-active')
 	}
 })
