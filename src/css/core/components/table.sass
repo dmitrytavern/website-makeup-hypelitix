@@ -7,6 +7,7 @@
     background: #FCFBFF
 
   th
+    font-size: calc(17px + 2.5 * ((100vw - 375px) / 1545))
     text-align: center
     padding: 17px 0
     border: 1px solid #F3F3F3
@@ -19,3 +20,37 @@
     background: #FDFBF5
     font-size: 17px
 
+  tr:not(.table__head) th span
+    display: inline
+
+    &:first-child
+      display: none
+
+@media screen and (max-width: 767px)
+  .table
+    font-family: "TTCommons Bold", sans-serif
+
+    &__head
+      display: none
+
+    th,
+    tr:not(&__head)
+      display: block
+
+    th
+      display: flex
+      justify-content: space-between
+      text-align: left
+      padding: 12px
+      border: none
+
+      &:first-child
+        padding-top: 24px
+      &:last-child
+        padding-bottom: 24px
+
+    tr:not(.table__head) th span
+      &:first-child
+        display: block
+      &:last-child
+        width: 20%

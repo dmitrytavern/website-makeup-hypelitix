@@ -113,8 +113,8 @@ block content
                 | generalized way making it easier to analyze data for it's clients. Specifically.
 
             .row
-                .col-12.col-lg-8
-                    table.table
+                .col-12.col-xl-8
+                    table.table.prices__table
                         tr.table__head
                             th Кол-во аккаунтов (до)
                             th Скидка %
@@ -123,10 +123,18 @@ block content
 
                         for item in array
                           tr
-                            th= item.accounts
-                            th= item.discount
-                            th= item.syncPrice
-                            th= item.servicePrice
+                            th
+                                span Кол-во аккаунтов (до)
+                                span #{item.accounts}
+                            th
+                                span Скидка %
+                                span #{ item.discount }
+                            th
+                                span Стоимость синхронизации
+                                span #{ item.syncPrice }
+                            th
+                                span Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
+                                span #{ item.servicePrice }
 
                     .prices__alert
                         i.icon-alert-2
@@ -135,7 +143,7 @@ block content
                             span.path3
                         span Individual price offers for orders over 50,000 accounts
 
-                .col-12.col-lg-4
+                .col-12.col-xl-4
                     .prices__window
                         i.icon-click
                             span.path1
@@ -151,6 +159,7 @@ block content
                             span.path11
                             span.path12
 
-                        h2 Access Request
-                        p Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
+                        div
+                            h2 Access Request
+                            p Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
                         .btn.btn-primary( data-toggle="modal" data-target="#modal-access" ) Get Access
