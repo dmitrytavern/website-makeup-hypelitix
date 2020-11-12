@@ -8,9 +8,10 @@ block title
 	title #{HTMLoptions.filenameRoot.charAt(0).toUpperCase() + HTMLoptions.filenameRoot.slice(1)} page
 
 if HTMLoptions.env["NODE_ENV"] === 'production'
+	meta(property="og:image" content="/img/header-img.png")
 	meta(name="theme-color" content=HTMLoptions.env["COLOR_THEME"])
 	meta(name="description" content="Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.")
-
+	meta(name="keywords" content="Hypelitix, instagram, track instagram profile, instagram data, analize")
 
 	if HTMLoptions.favicon
 		link(rel="apple-touch-icon" sizes="180x180" href='img/apple-touch-icon.png')
