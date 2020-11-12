@@ -81,7 +81,7 @@ const rules = {
 				options: {
 					name: path.join('[name].[ext]'),
 					outputPath: 'fonts',
-					publicPath: '../fonts',
+					publicPath: '/fonts',
 				},
 			},
 		],

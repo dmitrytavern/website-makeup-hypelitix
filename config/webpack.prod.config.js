@@ -33,7 +33,7 @@ if (modeCompileCollect) {
 
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry,
 	output: {
 		filename: path.join(routeDist.js, names.appJS),

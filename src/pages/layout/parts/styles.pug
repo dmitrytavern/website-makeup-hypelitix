@@ -1,5 +1,15 @@
 
 if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
+    link(href=require('../../../fonts/TTCommons/TTCommons-Regular.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/TTCommons/TTCommons-Bold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/TTCommons/TTCommons-DemiBold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/TTCommons/TTCommons-Medium.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/icomoon/icomoon.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+
+    each file in htmlWebpackPlugin.files.css
+        if file.search('.min') > -1
+            link(href=file rel="preload" as="style")
+
     each file in htmlWebpackPlugin.files.css
         if file.search('.min') > -1
             link(href=file rel="stylesheet")
