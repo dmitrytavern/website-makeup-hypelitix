@@ -7,6 +7,7 @@
   z-index: 100
 
   &__wrapper
+    transition: padding .3s
     padding-top: 40px
     padding-bottom: 40px
     border-bottom: 2px solid rgba(#f8f8f8, 0)
@@ -30,6 +31,7 @@
     align-items: center
     justify-content: center
     margin: 0 auto
+    cursor: pointer
 
     span
       transition: all .3s
@@ -77,6 +79,9 @@
         font-weight: 500
         font-family: 'TTCommons Medium', sans-serif
 
+        &.is-active
+          color: $color-primary
+
       &:first-child
         margin-left: 0
       &:last-child
@@ -95,6 +100,11 @@
 
     .header__wrapper
       border-color: #F8F8F8
+
+  &.is-scroll
+    .header__wrapper
+      padding-top: 22px
+      padding-bottom: 22px
 
 @media screen and (min-width: 993px)
   .header

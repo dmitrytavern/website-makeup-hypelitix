@@ -32,7 +32,7 @@
     padding: 50px 55px 45px 55px
     background: #ffffff
     width: 100%
-    max-width: 434px
+    max-width: 564px
 
   &__title
     font-size: 28px
@@ -51,14 +51,19 @@
     display: block
     margin-left: auto
 
+@media screen and (min-width: 992px)
+  .form-question__wrapper
+    max-width: 434px
+
+@media screen and (min-width: 1440px)
+  .form-question__wrapper
+    max-width: 500px
+
 @media screen and (max-width: 991px)
   .form-question
     &__dot
       bottom: -25px
       left: -30px
-
-    &__wrapper
-      max-width: 564px
 
     &__btn
       margin-right: auto

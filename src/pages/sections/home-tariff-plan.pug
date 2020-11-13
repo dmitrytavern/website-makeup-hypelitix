@@ -22,7 +22,7 @@ section.tariff-plan
                     .calculator__dots
                         .calculator__dot(
                                 v-for="(plan, index) in plans"
-                                :class="{'is-active': plan.active}"
+                                :class="{'is-active': plan.active, 'is-current': plan.current}"
                                 :style="{transform: `rotate(${index * 22.5}deg) translateY(-50%)`}"
                                 @dragstart="() => false"
                             )

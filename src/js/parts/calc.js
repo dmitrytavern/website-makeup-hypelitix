@@ -7,24 +7,24 @@ if (document.getElementById('calculator') !== null) {
 			moving: false,
 			positionStartMovingX: 0,
 			positionStartMovingY: 0,
-			activePlan: {active: true, accounts: 500, price: '$0.58'},
+			activePlan: {active: true, accounts: 500, price: '$0.58',current: true},
 			plans: [
-				{active: true, accounts: 100, price: '$0.60'},
-				{active: true, accounts: 500, price: '$0.58'},
-				{active: false, accounts: 1000, price: '$0.57'},
-				{active: false, accounts: 2000, price: '$0.55'},
-				{active: false, accounts: 4000, price: '$0.54'},
-				{active: false, accounts: 6000, price: '$0.52'},
-				{active: false, accounts: 8000, price: '$0.49'},
-				{active: false, accounts: 10000, price: '$0.49'},
-				{active: false, accounts: 15000, price: '$0.47'},
-				{active: false, accounts: 20000, price: '$0.46'},
-				{active: false, accounts: 25000, price: '$0.44'},
-				{active: false, accounts: 30000, price: '$0.42'},
-				{active: false, accounts: 35000, price: '$0.41'},
-				{active: false, accounts: 40000, price: '$0.38'},
-				{active: false, accounts: 45000, price: '$0.38'},
-				{active: false, accounts: 50000, price: '$0.36'},
+				{active: true, accounts: 100, price: '$0.60', current: true},
+				{active: false, accounts: 500, price: '$0.58', current: false},
+				{active: false, accounts: 1000, price: '$0.57', current: false},
+				{active: false, accounts: 2000, price: '$0.55', current: false},
+				{active: false, accounts: 4000, price: '$0.54', current: false},
+				{active: false, accounts: 6000, price: '$0.52', current: false},
+				{active: false, accounts: 8000, price: '$0.49', current: false},
+				{active: false, accounts: 10000, price: '$0.49', current: false},
+				{active: false, accounts: 15000, price: '$0.47', current: false},
+				{active: false, accounts: 20000, price: '$0.46', current: false},
+				{active: false, accounts: 25000, price: '$0.44', current: false},
+				{active: false, accounts: 30000, price: '$0.42', current: false},
+				{active: false, accounts: 35000, price: '$0.41', current: false},
+				{active: false, accounts: 40000, price: '$0.38', current: false},
+				{active: false, accounts: 45000, price: '$0.38', current: false},
+				{active: false, accounts: 50000, price: '$0.36', current: false},
 			],
 		},
 		computed: {
@@ -59,7 +59,12 @@ if (document.getElementById('calculator') !== null) {
 			changePlan(indexPlan) {
 				this.plans.map((plan, index) => {
 					if (index <= indexPlan) plan.active = true
-					if (index === indexPlan) this.activePlan = plan
+					if (index === indexPlan) {
+						plan.current = true
+						this.activePlan = plan
+					} else {
+						plan.current = false
+					}
 					if (index > indexPlan) plan.active = false
 				})
 			},

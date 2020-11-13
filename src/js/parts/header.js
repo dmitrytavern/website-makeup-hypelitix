@@ -17,6 +17,7 @@ function toggleHeaderMenu() {
 	$headerMenuBtn.toggleClass('is-active')
 	$header.toggleClass('is-menu-open')
 	$menu.toggleClass('is-open')
+	document.body.classList.toggle('menu-opened')
 }
 
 $($headerMenuBtn).on('click', toggleHeaderMenu)

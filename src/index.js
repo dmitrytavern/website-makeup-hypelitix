@@ -13,6 +13,7 @@ import './css/core.sass'
 * */
 import './img/sprite/lang-gb.svg'
 import './img/sprite/lang-ru.svg'
+import './img/sprite/logo.svg'
 
 
 /*
