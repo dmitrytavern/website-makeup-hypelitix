@@ -114,18 +114,6 @@
     &__menu
       display: none
 
-@media screen and (max-width: 767px)
-  .header
-    &__menu
-      margin-right: unset
-
-    &__column
-      &:last-child
-        display: none
-
-    &__lang
-      display: none
-
 @media screen and (max-width: 1439px)
   .header
     &__wrapper
@@ -138,3 +126,20 @@
     &__nav
       li
         margin: 0 30px
+
+@media screen and (max-width: 767px)
+  .header
+
+    &.is-scroll &__wrapper
+      padding-top: 18px
+      padding-bottom: 18px
+
+    &__menu
+      margin-right: unset
+
+    &__column
+      &:last-child
+        display: none
+
+    &__lang
+      display: none

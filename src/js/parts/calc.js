@@ -7,7 +7,7 @@ if (document.getElementById('calculator') !== null) {
 			moving: false,
 			positionStartMovingX: 0,
 			positionStartMovingY: 0,
-			activePlan: {active: true, accounts: 500, price: '$0.58',current: true},
+			activePlan: {active: true, accounts: 100, price: '$0.60',current: true},
 			plans: [
 				{active: true, accounts: 100, price: '$0.60', current: true},
 				{active: false, accounts: 500, price: '$0.58', current: false},
@@ -39,16 +39,21 @@ if (document.getElementById('calculator') !== null) {
 					'transform': `rotate(${val}deg) translateY(-50%)`
 				}
 			},
-			circleStyle() {
+
+			circleStyleDesktop() {
 				// 6.25% = 22.5deg
 				let percent = 100 * ((this.activePlans - 1) * 22.5) / 360
-				let val = 0
+				let val = Math.floor(1382 - (1382 * percent) / 100) + (this.activePlans - 1) * 0.69
 
-				if (window.innerWidth > 567) {
-					val = Math.floor(1382 - (1382 * percent) / 100) + (this.activePlans - 1) * 0.69
-				} else {
-					val = Math.floor(941 - (941 * percent) / 100)
+				return {
+					'stroke-dashoffset': val
 				}
+			},
+
+			circleStyleMobile() {
+				// 6.25% = 22.5deg
+				let percent = 100 * ((this.activePlans - 1) * 22.5) / 360
+				let val = Math.floor(941 - (941 * percent) / 100)
 
 				return {
 					'stroke-dashoffset': val
