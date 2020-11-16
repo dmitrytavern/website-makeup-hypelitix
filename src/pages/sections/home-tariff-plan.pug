@@ -17,6 +17,7 @@ section.tariff-plan
                         span.calculator__progress-round(
                             :style="roundStyle"
                             @mousedown="roundMouseDown"
+                            @touchstart="roundTouchDown"
                             ) <span></span>
 
                     .calculator__dots
@@ -26,7 +27,7 @@ section.tariff-plan
                                 :style="{transform: `rotate(${index * 22.5}deg) translateY(-50%)`}"
                                 @dragstart="() => false"
                             )
-                            span( @click="changePlan(index)" @mouseover="toPlan(index)" @dragstart="() => false" )
+                            span( @click="changePlan(index)" @mouseover="toPlan(index)" @dragstart="() => false" :data-plan="index" )
 
                     .calculator__content( :class="{'is-no-select': moving}" )
                         span.calculator__content-price.h2 {{ activePlan.price }}

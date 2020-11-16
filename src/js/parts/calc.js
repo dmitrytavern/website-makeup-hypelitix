@@ -5,8 +5,6 @@ if (document.getElementById('calculator') !== null) {
 		el: '#calculator',
 		data: {
 			moving: false,
-			positionStartMovingX: 0,
-			positionStartMovingY: 0,
 			activePlan: {active: true, accounts: 100, price: '$0.60',current: true},
 			plans: [
 				{active: true, accounts: 100, price: '$0.60', current: true},
@@ -64,7 +62,7 @@ if (document.getElementById('calculator') !== null) {
 			changePlan(indexPlan) {
 				this.plans.map((plan, index) => {
 					if (index <= indexPlan) plan.active = true
-					if (index === indexPlan) {
+					if (+index === +indexPlan) {
 						plan.current = true
 						this.activePlan = plan
 					} else {
@@ -79,14 +77,35 @@ if (document.getElementById('calculator') !== null) {
 				this.changePlan(indexPlan)
 			},
 
-			roundMouseDown(e) {
+			roundMouseDown() {
 				this.moving = true
-				this.positionStartMovingX = e.pageX
-				this.positionStartMovingY = e.pageY
 			},
+
+			roundTouchDown(e) {
+				this.moving = true
+			}
 		},
 		mounted() {
 			window.addEventListener('mouseup', () => {
+				this.moving = false
+			})
+
+			window.addEventListener('touchmove', (e) => {
+				if (!this.moving) return
+
+				const target = document.elementFromPoint(
+					e.changedTouches[0].clientX,
+					e.changedTouches[0].clientY
+				)
+
+				if (!target) return
+
+				const plan = target.getAttribute('data-plan')
+
+				if (plan) this.toPlan(plan)
+			})
+
+			window.addEventListener('touchend', (e) => {
 				this.moving = false
 			})
 		}
