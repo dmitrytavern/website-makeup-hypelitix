@@ -10,9 +10,9 @@ $('#contacts-form').submit(function (e) {
 	let error = false
 	for (let { name, value } of data) {
 		switch (name) {
-			case 'fullname':
+			case 'name':
 				if (value === '') {
-					activateError('fullname')
+					activateError('name')
 					error = true
 				}
 				break;
@@ -27,7 +27,19 @@ $('#contacts-form').submit(function (e) {
 
 	if (!error) {
 		// Send data
-		console.log('Data send')
+		$.ajax({
+			url: 'https://test.greatpix.studio/callback',
+			method: 'POST',
+			dataType: 'JSON',
+			data: {
+				name: data[0].value,
+				email: data[1].value
+			},
+			success: function () {
+				console.log('Data success send!')
+			}
+		})
+
 		$('.form-question__success-message').addClass('is-active')
 	}
 })
