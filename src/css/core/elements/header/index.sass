@@ -13,14 +13,16 @@
     border-bottom: 2px solid rgba(#f8f8f8, 0)
 
   &__lang
+    position: relative
     margin-left: 100px
+    z-index: 1
 
   &__column
     display: flex
     align-items: center
 
   &__menu
-    transition: all .3s
+    transition: background .3s
     position: relative
     width: 52px
     height: 38px
@@ -34,7 +36,7 @@
     cursor: pointer
 
     span
-      transition: all .3s
+      transition: transform .3s
       position: absolute
       top: 50%
       width: 18px
@@ -53,8 +55,6 @@
 
     &.is-active
       span
-        background: #000000
-
         &:first-child
           transform: translateY(-1px) rotate(45deg)
 

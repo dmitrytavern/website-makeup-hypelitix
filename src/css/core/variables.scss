@@ -88,7 +88,7 @@ $link-color-active: #4831F2;
 // Buttons
 
 $btn-border-radius: 2px;
-$btn-transition: all .3s;
+$btn-transition: border .3s;
 
 $btn-font: 'TTCommons Medium', sans-serif;
 $btn-font-weight: 500;
@@ -105,6 +105,6 @@ $btn-sizes: (
 
 // Dropdown
 
-$dropdown-transition: all .3s;
+$dropdown-transition: .3s;
 $dropdown-ico-size: 14px;
 $dropdown-ico-ml: 8px;

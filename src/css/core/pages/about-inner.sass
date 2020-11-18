@@ -2,10 +2,25 @@
   &__content
     line-height: 22px
 
+    h1
+      position: relative
+      font-size: min(calc(32px + 16 * ((100vw - 375px) / 1545)), 42px)
+      margin-bottom: 80px
+      margin-top: 0
+
+      &::after
+        content: ''
+        display: block
+        width: 100%
+        max-width: 240px
+        height: 6px
+        background: #FBEDCF
+        margin-top: 15px
+
     h2
       margin-top: 80px
       margin-bottom: 40px
-      font-size: min(calc(34px + 6 * ((100vw - 375px) / 1545)), 38px)
+      font-size: min(calc(28px + 6 * ((100vw - 375px) / 1545)), 38px)
 
     h3
       margin-bottom: 30px
@@ -15,18 +30,20 @@
       margin-top: 35px
       margin-bottom: 18px
 
+    h1,
     h2,
     h3,
     h4
       line-height: normal
 
-    > p + p,
-    > ul + p
+    > p
       margin-top: 22px
+      margin-bottom: 22px
 
     ul
       margin-top: 22px
-      padding-left: 30px
+      margin-bottom: 22px
+      padding-left: 12px
 
       li
         line-height: 28px
