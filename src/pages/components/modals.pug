@@ -5,29 +5,29 @@
             i.icon-close
 
         .modal__tab( data-name="form" ).is-active
-            h2.modal__title Access Request
+            h2.modal__title(data-i18n="modal-title") Access Request
             form( method="POST" action="/callback" )#modal-access-form
                 .input-group.modal__input
-                    .input__label Name
+                    .input__label(data-i18n="input-name") Name
                     input.is-modal-input( type="text" name="name" placeholder="Full Name")
                     .input__error
                         i !
-                        | Wrong name
+                        span(data-i18n="input-name-error") Wrong name
 
                 .input-group.modal__input
-                    .input__label Email
+                    .input__label(data-i18n="input-email") Email
                     input.is-modal-input( type="email" name="email" placeholder="Email")
                     .input__error
                         i !
-                        | Wrong Email address
+                        span(data-i18n="input-email-error") Wrong Email address
 
                 .form-error-text No error
 
-                button( type="submit" ).btn.btn-primary.modal__btn.modal__btn-send Send
+                button( type="submit" data-i18n="btn-send" ).btn.btn-primary.modal__btn.modal__btn-send Send
 
         .modal__tab( data-name="success" )
-            h3.modal__subtitle Request has been Sent!
-            p Thank you for interesting our company. <br> Our manager will contact you soon!
-            a(href="#" data-dismiss="modal").btn.btn-primary.modal__btn.align-center.modal__btn-success Back Home
+            h3.modal__subtitle(data-i18n="modal-success-title") Request has been Sent!
+            p <span data-i18n="modal-success-desc-1">Thank you for interesting our company.</span><br> <span data-i18n="modal-success-desc-2">Our manager will contact you soon!</span>
+            a(href="#" data-dismiss="modal" data-i18n="modal-btn").btn.btn-primary.modal__btn.align-center.modal__btn-success Back Home
 
 .modal-custom-backdrop

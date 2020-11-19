@@ -9,14 +9,14 @@ block content
             .row
                 .col-12.col-lg-6
                     .title.contacts__title
-                        h1.h2 Our Contacts
+                        h1.h2(data-i18n="contacts-title") Our Contacts
                         span.line
 
-                    p.contacts__description Upload the list of accounts using the administrative panel or via the corresponding API method.
+                    p.contacts__description(data-i18n="contacts-desc") Upload the list of accounts using the administrative panel or via the corresponding API method.
 
                     .contacts__contacts
                         .contacts__contact
-                            span Email:
+                            span(data-i18n="phone") Email:
                             span <a href="mailto:contact@hypelitix.com">contact@hypelitix.com</a>
 
                         .contacts__contact
@@ -32,28 +32,30 @@ block content
                     .contacts__form-question.form-question
                         img(src=require('../img/dots-1.png').default alt="").form-question__dot.decor-dot.dot-1
                         .form-question__wrapper
-                            h2.form-question__title Have Question? Ask us!
+                            h2.form-question__title(data-i18n="contacts-form-title") Have Question? Ask us!
 
                             .form-question__success-message
                                 i.icon-email
                                     span.path1
                                     span.path2
                                     span.path3
-                                span Сообщение успешно отправлено!
+                                span(data-i18n="contacts-form-message") Сообщение успешно отправлено!
 
                             form#contacts-form
                                 .input-group.form-question__input.is-required
-                                    .input__label Full Name
+                                    .input__label(data-i18n="input-name")
                                     input( type="text" name="name" placeholder="Your Full Name")
                                     .input__error
                                         i !
-                                        | Wrong name
+                                        span(data-i18n="input-name-error") Wrong name
 
                                 .input-group.form-question__input.is-required
-                                    .input__label Email
+                                    .input__label(data-i18n="input-email") Email
                                     input( type="email" name="email" placeholder="Your Email")
                                     .input__error
                                         i !
-                                        | Wrong Email address
+                                        span(data-i18n="input-email-error") Wrong Email address
 
-                                button( type="submit" ).btn.btn-primary.form-question__btn Send
+                                .form-error-text No error
+
+                                button( type="submit" data-i18n="btn-send" ).btn.btn-primary.form-question__btn Send

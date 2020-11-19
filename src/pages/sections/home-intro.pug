@@ -1,9 +1,9 @@
 section.intro
     .container.intro__container
         .intro__content
-            h2.h1 Automated analize<br/>Instagram Data
-            p Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.
-            button.intro__btn.btn.btn-primary(data-toggle="modal" data-target="#modal-access") Get Access
+            h2.h1(data-i18n="home-intro-title") Automated analize<br/>Instagram Data
+            p(data-i18n="home-intro-description") Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.
+            button.intro__btn.btn.btn-primary(data-toggle="modal" data-target="#modal-access" data-i18n="btn-get-access") Get Access
 
         picture
             source(srcset=require('../../img/header-img.png').default media="(min-width: 768px)")

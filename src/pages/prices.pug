@@ -107,10 +107,10 @@ block content
     section.prices.main-section-page
         .container
             .title.prices__title
-                h1.h2 Prices
+                h1.h2(data-i18n="nav-prices") Prices
                 span.line
 
-            p.prices__description
+            p.prices__description(data-i18n="prices-desc")
                 | Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
                 | It's a paid web-service which provides publicly available Instagram profiles data in an automated and
                 | generalized way making it easier to analyze data for it's clients. Specifically.
@@ -119,24 +119,24 @@ block content
                 .col-12.col-xl-8
                     table.table.prices__table
                         tr.table__head
-                            th Кол-во аккаунтов (до)
-                            th Скидка %
-                            th Стоимость синхронизации <br/> (USD)
-                            th Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
+                            th(data-i18n="table-col-accounts") Кол-во аккаунтов (до)
+                            th(data-i18n="table-col-discount") Скидка %
+                            th(data-i18n="table-col-sync") Стоимость синхронизации <br/> (USD)
+                            th(data-i18n="table-col-price") Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
 
                         for item in array
                           tr
                             th
-                                span Кол-во аккаунтов (до)
+                                span(data-i18n="table-col-accounts") Кол-во аккаунтов (до)
                                 span #{item.accounts}
                             th
-                                span Скидка %
+                                span(data-i18n="table-col-discount") Скидка %
                                 span #{ item.discount }
                             th
-                                span Стоимость синхронизации
+                                span(data-i18n="table-col-sync") Стоимость синхронизации
                                 span #{ item.syncPrice }
                             th
-                                span Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
+                                span(data-i18n="table-col-price") Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
                                 span #{ item.servicePrice }
 
                     .prices__alert
@@ -144,7 +144,7 @@ block content
                             span.path1
                             span.path2
                             span.path3
-                        span Individual price offers for orders over 50,000 accounts
+                        span(data-i18n="prices-warning") Individual price offers for orders over 50,000 accounts
 
                 .col-12.col-xl-4
                     .prices__window

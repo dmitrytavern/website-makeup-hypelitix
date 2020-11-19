@@ -2,8 +2,10 @@ if htmlWebpackPlugin.options.env["NODE_ENV"] === 'development'
 	script(src="http://localhost:35729/livereload.js")
 
 script(src=require('../../../js/vendor/jquery.vendor.min').default)
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
 script(src=require('../../../js/vendor/bootstrap.vendor.min').default)
 script(src=require('../../../js/vendor/vue.vendor.min').default)
+script(src=require('../../../js/vendor/i18next.vendor.min').default)
 
 each file in htmlWebpackPlugin.files.js
 	script(src=file)

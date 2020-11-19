@@ -20,10 +20,10 @@ mixin header(theme)
 
                         nav.header__nav
                             ul
-                                li <a href="/about.html">About Us</a>
-                                li <a href="/prices.html">Prices</a>
-                                li <a href="/contacts.html">Contact Us</a>
-                                li <a href="#">Log In</a>
+                                li <a href="/about.html" data-i18n="nav-about">About Us</a>
+                                li <a href="/prices.html" data-i18n="nav-prices">Prices</a>
+                                li <a href="/contacts.html" data-i18n="nav-contacts">Contact Us</a>
+                                li <a href="#" data-i18n="nav-login">Log In</a>
 
                     .col-md-5.col-lg-3.header__column
                         .header__contacts.social-media
@@ -38,13 +38,13 @@ mixin header(theme)
                     .menu__lang
                         include ../components/lang
 
-                    a.menu__login(href="#") Log In
+                    a.menu__login(href="#" data-i18n="nav-login") Log In
 
                 .menu__body
                     ul.list
-                        li.is-active <a href="/about.html">About Us</a>
-                        li <a href="/prices.html">Prices</a>
-                        li <a href="/contacts.html">Contact Us</a>
+                        li.is-active <a href="/about.html" data-i18n="nav-about">About Us</a>
+                        li <a href="/prices.html" data-i18n="nav-prices">Prices</a>
+                        li <a href="/contacts.html" data-i18n="nav-contacts">Contact Us</a>
 
             .menu__footer
                 .menu__email <a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a>
