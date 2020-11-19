@@ -19,7 +19,17 @@ function sendEmail(payload) {
 // Multilang
 const languages = {'en': 'English', 'ru': 'Русский'}
 
-function addLang(lang, langFull) {
+function initDropdownLanguages() {
+	for (let language in languages) {
+		if (language !== i18next.language) {
+			addDropdownLanguage(language, languages[language])
+		}
+	}
+
+	changeDropdownLanguage(i18next.language)
+}
+
+function addDropdownLanguage(lang, langFull) {
 	$('.dropdown-lang .dropdown-menu').append('<a class="dropdown-item" data-lng="'+lang+'" hreflang="'+lang+'" href="#">\n' +
 		'                                    <svg class="dropdown-lang__ico">\n' +
 		'                                        <use xlink:href="#lang-'+lang+'"></use>\n' +
@@ -28,11 +38,11 @@ function addLang(lang, langFull) {
 		'                                </a>')
 }
 
-function changeDropdownLang(lang) {
+function changeDropdownLanguage(lang) {
 	$('.dropdown-lang .dropdown-front svg use').attr('xlink:href', '#lang-'+lang)
 }
 
-function changeLang(err, t) {
+function translatePage(err, t) {
 	$('[data-i18n]').each(function (index, item) {
 		const name = item.getAttribute('data-i18n')
 		item.innerHTML = t(name)
@@ -40,7 +50,7 @@ function changeLang(err, t) {
 }
 
 i18next.init({
-	lng: 'en',
+	lng: localStorage.getItem('lang') || 'en',
 	debug: true,
 	resources: {
 		ru: {
@@ -123,14 +133,20 @@ i18next.init({
 				"table-col-discount": "Скидка %",
 				"table-col-sync": "Стоимость синхронизации",
 				"table-col-price": "Стоимость обслуживания (одного акк. в месяц - 60 синх.)",
+
 				"prices-desc": "Hypelitix создан командой разработчиков, в основном занимающихся продвижением в социальных сетях и аналитикой. Это платный веб-сервис, который предоставляет общедоступные данные профилей Instagram в автоматическом и обобщенном виде, что упрощает анализ данных для своих клиентов.",
 				"prices-warning": "Индивидуальные ценовые предложения при заказе от 50 000 аккаунтов",
+				"prices-modal-desc": "Hypelitix создан командой разработчиков, в основном занимающихся продвижением в социальных сетях и аналитикой.",
 
 				"phone": "Телефон:",
 				"contacts-form-title": "Есть вопросы? Спросите нас!",
 				"contacts-form-message": "Сообщение успешно отправлено!",
 				"contacts-form-name": "Имя",
-				"contacts-desc": "Загрузите список аккаунтов через административную панель или через соответствующий метод API."
+				"contacts-desc": "Загрузите список аккаунтов через административную панель или через соответствующий метод API.",
+
+				"about-desc-1": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated and generalized way making it easier to analyze data for it's clients. Specifically, at the moment the service allows it's clients to obtain Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
+				"about-desc-2": "Our clients are digital marketing agencies who run advertising campaigns on Instagram using Instagram bloggers for publishing ads. In order to efficiently manage and run the campaigns, our clients need to track their bloggers' Instagram profiles to analyse bloggers \"bio\", posts' and stories' metadata and to make sure that links, \"mentions\" or hashtags which represent a particular brand are presented on the published media content or in the blogger's \"bio\".",
+				"about-desc-3": "To get access to Hypelitix features user requires Tokens - internal virtual currency. Tokens can be bought separately and are designed to use only within the Hypelitix service.",
 			}
 		},
 		en: {
@@ -221,24 +237,33 @@ i18next.init({
 				"table-col-price": "Service cost <br/> (one acc. Per month - 60 sync.)",
 
 				"prices-desc": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated andgeneralized way making it easier to analyze data for it's clients. Specifically.",
-				"prices-warning": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics.",
+				"prices-warning": "Individual price offers for orders over 50,000 accounts",
+				"prices-modal-desc": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics.",
 
 				"phone": "Phone",
 				"contacts-form-title": "Have Question? Ask us!",
 				"contacts-form-message": "Message has been sent!",
 				"contacts-form-name": "Full Name",
-				"contacts-desc": "Upload the list of accounts using the administrative panel or via the corresponding API method."
+				"contacts-desc": "Upload the list of accounts using the administrative panel or via the corresponding API method.",
+
+				"about-desc-1": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated and generalized way making it easier to analyze data for it's clients. Specifically, at the moment the service allows it's clients to obtain Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
+				"about-desc-2": "Our clients are digital marketing agencies who run advertising campaigns on Instagram using Instagram bloggers for publishing ads. In order to efficiently manage and run the campaigns, our clients need to track their bloggers' Instagram profiles to analyse bloggers \"bio\", posts' and stories' metadata and to make sure that links, \"mentions\" or hashtags which represent a particular brand are presented on the published media content or in the blogger's \"bio\".",
+				"about-desc-3": "To get access to Hypelitix features user requires Tokens - internal virtual currency. Tokens can be bought separately and are designed to use only within the Hypelitix service.",
 			}
 		},
 	},
-}, changeLang)
+}, function (err, t) {
+	initDropdownLanguages()
+	translatePage(err, t)
+})
 
 $('body').on('click', '.dropdown-lang .dropdown-menu a', function () {
 	const lng = $(this).attr('data-lng')
-	addLang(i18next.language, languages[i18next.language])
-	changeDropdownLang(lng)
 
-	i18next.changeLanguage(lng, changeLang)
+	addDropdownLanguage(i18next.language, languages[i18next.language])
+	changeDropdownLanguage(lng)
+	localStorage.setItem('lang', lng)
+	i18next.changeLanguage(lng, translatePage)
 
 	$(this).remove()
 })

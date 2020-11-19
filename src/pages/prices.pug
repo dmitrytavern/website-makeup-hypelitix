@@ -119,7 +119,7 @@ block content
                 .col-12.col-xl-8
                     table.table.prices__table
                         tr.table__head
-                            th(data-i18n="table-col-accounts") Кол-во аккаунтов (до)
+                            th(data-i18n="table-col-account") Кол-во аккаунтов (до)
                             th(data-i18n="table-col-discount") Скидка %
                             th(data-i18n="table-col-sync") Стоимость синхронизации <br/> (USD)
                             th(data-i18n="table-col-price") Стоимость обслуживания <br/> (одного акк. в месяц - 60 синх.)
@@ -163,6 +163,6 @@ block content
                             span.path12
 
                         div
-                            h2 Access Request
-                            p Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
-                        .btn.btn-primary( data-toggle="modal" data-target="#modal-access" ) Get Access
+                            h2(data-i18n="modal-title") Access Request
+                            p(data-i18n="prices-modal-desc") Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
+                        .btn.btn-primary( data-toggle="modal" data-target="#modal-access" data-i18n="btn-get-access" ) Get Access
