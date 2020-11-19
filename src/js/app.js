@@ -47,11 +47,16 @@ function translatePage(err, t) {
 		const name = item.getAttribute('data-i18n')
 		item.innerHTML = t(name)
 	})
+
+	$('[data-i18n-placeholder]').each(function (index, item) {
+		const name = item.getAttribute('data-i18n-placeholder')
+		item.placeholder = t(name)
+	})
 }
 
 i18next.init({
 	lng: localStorage.getItem('lang') || 'en',
-	debug: true,
+	debug: false,
 	resources: {
 		ru: {
 			translation: {
@@ -188,7 +193,7 @@ i18next.init({
 
 
 				"home-demonstration-2-title": "Track User’s Stories, Posts.",
-				"home-demonstration-2-desc": "Track profile posts' and stories' metadata in order to filter them by hashtags and mentions",
+				"home-demonstration-2-desc": "Track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
 				"home-demonstration-list-3": "Instant notification via Webhocks",
 				"home-demonstration-list-4": "Caching data for 14 days",
 
@@ -322,16 +327,16 @@ $('form input').on('focus', function () {
 	$(this).removeClass('is-error')
 })
 
-function activateError(name) {
-	$(`#modal-access form input[name="${name}"]`).addClass('is-error')
+function activateError(el, name) {
+	$(`${el} input[name="${name}"]`).addClass('is-error')
 }
 
-function checkFormData(data) {
+function checkFormData(el, data) {
 	let error = false
 	for (let { name, value } of data) {
 		if (value === '') {
 			error = true
-			activateError(name)
+			activateError(el, name)
 		}
 	}
 
@@ -352,7 +357,7 @@ $('#modal-access-form').submit(function (e) {
 	e.preventDefault()
 	const data = $('#modal-access form').serializeArray()
 
-	if (!checkFormData(data)) {
+	if (!checkFormData('#modal-access', data)) {
 		const normData = normalizeFormData(data)
 
 		sendEmail({
@@ -380,7 +385,7 @@ $('#contacts-form').submit(function (e) {
 	e.preventDefault()
 	const data = $('#contacts-form').serializeArray()
 
-	if (!checkFormData(data)) {
+	if (!checkFormData('#contacts-form', data)) {
 		const normData = normalizeFormData(data)
 
 		sendEmail({

@@ -9,14 +9,14 @@
             form( method="POST" action="/callback" )#modal-access-form
                 .input-group.modal__input
                     .input__label(data-i18n="input-name") Name
-                    input.is-modal-input( type="text" name="name" placeholder="Full Name")
+                    input.is-modal-input( type="text" name="name" placeholder="Full Name" data-i18n-placeholder="input-name-placeholder")
                     .input__error
                         i !
                         span(data-i18n="input-name-error") Wrong name
 
                 .input-group.modal__input
                     .input__label(data-i18n="input-email") Email
-                    input.is-modal-input( type="email" name="email" placeholder="Email")
+                    input.is-modal-input( type="email" name="email" placeholder="Email" data-i18n-placeholder="input-email-placeholder")
                     .input__error
                         i !
                         span(data-i18n="input-email-error") Wrong Email address

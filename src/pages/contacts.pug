@@ -44,14 +44,14 @@ block content
                             form#contacts-form
                                 .input-group.form-question__input.is-required
                                     .input__label(data-i18n="input-name")
-                                    input( type="text" name="name" placeholder="Your Full Name")
+                                    input( type="text" name="name" placeholder="Your Full Name" data-i18n-placeholder="input-name-placeholder")
                                     .input__error
                                         i !
                                         span(data-i18n="input-name-error") Wrong name
 
                                 .input-group.form-question__input.is-required
                                     .input__label(data-i18n="input-email") Email
-                                    input( type="email" name="email" placeholder="Your Email")
+                                    input( type="email" name="email" placeholder="Your Email" data-i18n-placeholder="input-email-placeholder")
                                     .input__error
                                         i !
                                         span(data-i18n="input-email-error") Wrong Email address
