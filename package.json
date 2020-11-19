@@ -26,7 +26,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config config/webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js --progress --hide-modules && rollup -c config/rollup.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.config.js --progress --hide-modules && rollup -c config/rollup.config.js",
+    "build:serve": "ngrok http 3001 -host-header=\"localhost:3001\""
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

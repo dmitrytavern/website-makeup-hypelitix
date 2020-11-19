@@ -5,7 +5,7 @@ mixin footer()
                 .col-12.col-lg-3.footer__logo-col
                     a(href="/").logo.footer__logo
                         svg
-                            use(xlink:href="#logo")
+                            use(xlink:href=require('../img/sprite/sprite.svg').default + '#logo')
 
                     p.footer__copyright © 2020 Hypelitix. <span data-i18n="footer-copyright">All rights reserved.</span>
 
