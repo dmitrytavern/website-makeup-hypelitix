@@ -6,10 +6,10 @@
 
         .modal__tab( data-name="form" ).is-active
             h2.modal__title Access Request
-            form
+            form( method="POST" action="/callback" )#modal-access-form
                 .input-group.modal__input
                     .input__label Name
-                    input.is-modal-input( type="text" name="fullname" placeholder="Full Name")
+                    input.is-modal-input( type="text" name="name" placeholder="Full Name")
                     .input__error
                         i !
                         | Wrong name
@@ -20,6 +20,8 @@
                     .input__error
                         i !
                         | Wrong Email address
+
+                .form-error-text No error
 
                 button( type="submit" ).btn.btn-primary.modal__btn.modal__btn-send Send
 

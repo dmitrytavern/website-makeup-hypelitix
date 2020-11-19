@@ -25,12 +25,9 @@ const ImageminPlugin 						= require("imagemin-webpack");
 
 
 const entry = {
-	'vendor.min': path.join(resDir, 'index.js')
+	'vendor.min': path.join(resDir, 'index.js'),
+	'app.min': path.join(resDir, 'js', 'app.js')
 }
-if (modeCompileCollect) {
-	entry['app.min'] = path.join(resDir, 'js', 'app.js')
-}
-
 
 module.exports = {
 	mode: 'production',
@@ -100,6 +97,19 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.vendor\.min\.js$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: path.join('[name].[ext]'),
+							outputPath: 'js',
+							publicPath: '/js',
+						},
+					},
+				]
+			},
 			rules.svg,
 			rules.pug,
 			rules.fonts,

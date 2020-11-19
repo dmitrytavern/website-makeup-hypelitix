@@ -43,6 +43,19 @@ module.exports = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.vendor\.min\.js$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: path.join('[name].[ext]'),
+							outputPath: 'js',
+							publicPath: '/js',
+						},
+					},
+				]
+			},
 			rules.svg,
 			rules.pug,
 			rules.fonts,

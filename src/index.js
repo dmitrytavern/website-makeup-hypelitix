@@ -14,9 +14,3 @@ import './css/core.sass'
 import './img/sprite/lang-en.svg'
 import './img/sprite/lang-ru.svg'
 import './img/sprite/logo.svg'
-
-
-/*
-* 	Import js
-* */
-import './js/vendor/index'
