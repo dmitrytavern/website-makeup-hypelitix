@@ -32,14 +32,14 @@ function initDropdownLanguages() {
 function addDropdownLanguage(lang, langFull) {
 	$('.dropdown-lang .dropdown-menu').append('<a class="dropdown-item" data-lng="'+lang+'" hreflang="'+lang+'" href="#">\n' +
 		'                                    <svg class="dropdown-lang__ico">\n' +
-		'                                        <use xlink:href="#lang-'+lang+'"></use>\n' +
+		'                                        <use xlink:href="/img/icons/sprite.svg#lang-'+lang+'"></use>\n' +
 		'                                    </svg>\n' +
 		'                                    <span>'+langFull+'</span>\n' +
 		'                                </a>')
 }
 
 function changeDropdownLanguage(lang) {
-	$('.dropdown-lang .dropdown-front svg use').attr('xlink:href', '#lang-'+lang)
+	$('.dropdown-lang .dropdown-front svg use').attr('xlink:href', '/img/icons/sprite.svg#lang-'+lang)
 }
 
 function translatePage(err, t) {

@@ -63,7 +63,15 @@ const pages = fs
 
 const rules = {
 	js:  {test: /\.(js)$/, exclude: /node_modules/, loader: 'babel-loader'},
-	svg: {test: /\.svg$/, loader: 'svg-sprite-loader'},
+	svg: {
+		test: /\.svg$/,
+		loader: 'file-loader',
+		options: {
+			name: path.join('[name].[ext]'),
+			outputPath: 'img/icons',
+			publicPath: '/img/icons',
+		}
+	},
 	pug: {
 		test: /\.pug$/,
 		loader: {
