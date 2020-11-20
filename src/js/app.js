@@ -19,13 +19,14 @@ function sendEmail(payload) {
 
 
 // Multilang
+
 const defaultLanguages = 'en'
 const languages = {'en': 'English', 'ru': 'Русский'}
 
-function initDropdownLanguages() {
+function initDropdownLanguages(languages) {
 	for (let language in languages) {
 		if (language !== i18next.language) {
-			addDropdownLanguage(language, languages[language])
+			addDropdownLanguage(language, languages[language].nameFull)
 		}
 	}
 
@@ -46,224 +47,43 @@ function changeDropdownLanguage(lang) {
 }
 
 function translatePage(err, t) {
+	// Redirect to inner pages of selected lang
+	$('html[data-i18n-page]').each(function (index, item) {
+		const link = item.getAttribute('data-i18n-page')
+		if (window.location.pathname !== t(link)) {
+			window.location.href = t(link)
+		}
+	})
+
+	// Translate text blocks
 	$('[data-i18n]').each(function (index, item) {
 		const name = item.getAttribute('data-i18n')
 		item.innerHTML = t(name)
 	})
 
+	// Translate placeholder
 	$('[data-i18n-placeholder]').each(function (index, item) {
 		const name = item.getAttribute('data-i18n-placeholder')
 		item.placeholder = t(name)
 	})
+
+	// Translate href in links for inner page
+	$('a[data-i18n-link]').each(function (index, item) {
+		const link = item.getAttribute('data-i18n-link')
+		item.setAttribute('href', t(link))
+	})
 }
 
-i18next.init({
-	lng: localStorage.getItem('lang') || defaultLanguages,
-	debug: false,
-	resources: {
-		ru: {
-			translation: {
-				"nav-about": "О нас",
-				"nav-prices": "Цены",
-				"nav-contacts": "Контакты",
-				"nav-login": "Войти",
-
-				"nav-api": "API Документация",
-				"nav-terms": "Условия использования",
-				"nav-privacy-policy": "Политика конфиденциальности",
-				"nav-offer": "Публичная оферта",
-				"nav-cookie": "Политика Файлов Cookie",
-				"footer-link": "Связаться с нами",
-				"footer-copyright": "Все права сохранены.",
-
-				"chat-text": "Мы онлайн!",
-
-				"home-intro-title": "Автоматический анализ <br/> данных Instagram",
-				"home-intro-description": "Общедоступные данные профиля Instagram и отслеживание метаданных сообщений и историй в профилях с целью их фильтрации по хэштегам и упоминаниям.",
-
-				"btn-get-access": "Получить доступ",
-
-				"home-services-title": "Почему вам нужен Hypelitix",
-				"home-services-service-1": "Найдите блогеров и влиятельных лиц, которые охватят вашу целевую аудиторию.",
-				"home-services-service-2": "Выясните, какие блогеры принесут результат, а какие не принесут продаж или подписчиков.",
-				"home-services-service-3": "Не тратьте деньги на завышенные аккаунты блогеров с фальшивыми подписчиками.",
-				"home-services-service-4": "Анализируйте качество и рост подписчиков в Instagram.",
-
-				"home-demonstration-title": "Как это работает",
-				"home-demonstration-1-title": "Добавьте Инстаграм аккаунты",
-				"home-demonstration-1-desc": "Загрузите список аккаунтов через административную панель или через соответствующий метод API.",
-				"home-demonstration-list-1": "Загрузка с помощью .xls",
-				"home-demonstration-list-2": "Поддержка метода API",
-				"home-demonstration-2-title": "Отслеживайте Сторис и Посты пользователей.",
-				"home-demonstration-2-desc": "Отслеживайте метаданные сообщений профиля и историй, чтобы фильтровать их по хэштегам и упоминаниям.",
-				"home-demonstration-list-3": "Нативные уведомления с помощью Webhocks",
-				"home-demonstration-list-4": "Кешировнаие данных на протяжении 14 дней",
-
-				"home-demonstration-3-title": "Получите результат!",
-				"home-demonstration-3-desc": "Получите кешированные медиафайлы на панели управления или через API.",
-				"home-demonstration-list-5": "Фильтр по дате, хэштегам и т.д.",
-				"home-demonstration-list-6": "Загрузите медиафайлы с помощью панели управления",
-
-				"home-statistic-1-title": "Кешированных историй",
-				"home-statistic-2-title": "Отслеживаемых профилей",
-				"home-statistic-3-title": "Кешированных постов",
-				"home-statistic-time": "Каждый час",
-
-				"home-tariff-plan-title": "Рассчитайте свой собственный тариф",
-				"home-tariff-plan-desc": "Гибкая биллинговая система. Индивидуальный подход к клиентам. Мы готовы работать с задачами клиентов и адаптировать под них свои услуги.",
-				"home-tariff-plan-btn": "Автоматизировать Аналитику",
-
-				"home-pluses-title": "Почему мы",
-				"home-pluses-1": "Уникальный на рынке сервис для скачивания и кеширования историй, включая весь медиаконтент.",
-				"home-pluses-2-1": "Поддержка",
-				"home-pluses-2-2": "для OCR с изображений.",
-				"home-pluses-3": "Индивидуальный подход к клиентам. Мы готовы работать с задачами клиентов и адаптировать под них свои услуги.",
-
-				"home-tariff-plan-price": "(за 1 акк. в месяц)",
-				"home-tariff-plan-up": "до",
-				"home-tariff-plan-accounts": "аккаунтов",
-
-				"modal-title": "Получить доступ",
-				"input-name": "Имя",
-				"input-name-error": "Неверное Имя",
-				"input-email": "Email",
-				"input-email-error": "Неверный Email адрес",
-				"input-name-placeholder": "Ваше Имя",
-				"input-email-placeholder": "Ваш Email",
-				"btn-send": "Отправить",
-				"modal-success-title": "Запрос был отправлен!",
-				"modal-success-desc-1": "Спасибо за интерес к нашей компании",
-				"modal-success-desc-2": "Наш менеджер свяжется с вами очень скоро!",
-				"modal-btn": "На главную",
-
-				"contacts-title": "Наши Контакты",
-				"table-col-account": "Кол-во аккаунтов (до)",
-				"table-col-discount": "Скидка %",
-				"table-col-sync": "Стоимость синхронизации",
-				"table-col-price": "Стоимость обслуживания (одного акк. в месяц - 60 синх.)",
-
-				"prices-desc": "Hypelitix создан командой разработчиков, в основном занимающихся продвижением в социальных сетях и аналитикой. Это платный веб-сервис, который предоставляет общедоступные данные профилей Instagram в автоматическом и обобщенном виде, что упрощает анализ данных для своих клиентов.",
-				"prices-warning": "Индивидуальные ценовые предложения при заказе от 50 000 аккаунтов",
-				"prices-modal-desc": "Hypelitix создан командой разработчиков, в основном занимающихся продвижением в социальных сетях и аналитикой.",
-
-				"phone": "Телефон:",
-				"contacts-form-title": "Есть вопросы? Спросите нас!",
-				"contacts-form-message": "Сообщение успешно отправлено!",
-				"contacts-form-name": "Имя",
-				"contacts-desc": "Загрузите список аккаунтов через административную панель или через соответствующий метод API.",
-
-				"about-desc-1": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated and generalized way making it easier to analyze data for it's clients. Specifically, at the moment the service allows it's clients to obtain Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
-				"about-desc-2": "Our clients are digital marketing agencies who run advertising campaigns on Instagram using Instagram bloggers for publishing ads. In order to efficiently manage and run the campaigns, our clients need to track their bloggers' Instagram profiles to analyse bloggers \"bio\", posts' and stories' metadata and to make sure that links, \"mentions\" or hashtags which represent a particular brand are presented on the published media content or in the blogger's \"bio\".",
-				"about-desc-3": "To get access to Hypelitix features user requires Tokens - internal virtual currency. Tokens can be bought separately and are designed to use only within the Hypelitix service.",
-			}
-		},
-		en: {
-			translation: {
-				"nav-about": "About Us",
-				"nav-prices": "Prices",
-				"nav-contacts": "Contact Us",
-				"nav-login": "Log In",
-
-				"nav-api": "API Docs",
-				"nav-terms": "Terms of Service",
-				"nav-privacy-policy": "Privacy Policy",
-				"nav-offer": "Public Offer Agreement",
-				"nav-cookie": "Cookie Policy",
-
-				"footer-link": "Get in Touch",
-
-				"footer-copyright": "All rights reserved.",
-
-				"chat-text": "We are Online!",
-
-				"home-intro-title": "Automated analize<br/>Instagram Data",
-				"home-intro-description": "Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
-				"btn-get-access": "Get Access",
-
-				"home-services-title": "Why you need Hypelitix",
-				"home-services-service-1": "Find bloggers and influencers who will reach your target audience.",
-				"home-services-service-2": "Find out which bloggers will yield results and who will not bring sales or subscribers.",
-				"home-services-service-3": "Don’t waste your budget on inflated blogger accounts with fake followers.",
-				"home-services-service-4": "Analyse the quality and growth of instagram followers",
-
-
-				"home-demonstration-title": "How It works",
-
-				"home-demonstration-1-title": "Add Instagram Accounts",
-				"home-demonstration-1-desc": "Upload the list of accounts using the administrative panel or via the corresponding API method.",
-				"home-demonstration-list-1": "Upload by using .xls",
-				"home-demonstration-list-2": "Support API method",
-
-
-				"home-demonstration-2-title": "Track User’s Stories, Posts.",
-				"home-demonstration-2-desc": "Track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
-				"home-demonstration-list-3": "Instant notification via Webhocks",
-				"home-demonstration-list-4": "Caching data for 14 days",
-
-				"home-demonstration-3-title": "Get your Result!",
-				"home-demonstration-3-desc": "Obtain cached media in the dashboard or via API.",
-				"home-demonstration-list-5": "Filter by date, hashtags etc.",
-				"home-demonstration-list-6": "Download media using dashboard",
-
-				"home-statistic-1-title": "Cached Stories",
-				"home-statistic-2-title": "Tracked Profiles",
-				"home-statistic-3-title": "Cached Posts",
-				"home-statistic-time": "Every hour",
-
-				"home-tariff-plan-title": "Calculate Your Own Tariff Plan",
-				"home-tariff-plan-desc": "Flexible Billing System. Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.",
-				"home-tariff-plan-btn": "Automate your Analytics",
-
-				"home-pluses-title": "Why choose us",
-				"home-pluses-1": "A unique service on the market for downloading and caching stories, including all media content.",
-				"home-pluses-2-1": "Ready support for",
-				"home-pluses-2-2": "for OCR from images.",
-				"home-pluses-3": "Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.",
-
-				"home-tariff-plan-price": "(for 1 acc per month)",
-				"home-tariff-plan-up": "up to",
-				"home-tariff-plan-accounts": "accounts",
-
-				"modal-title": "Access Request",
-				"input-name": "Name",
-				"input-name-error": "Wrong name",
-				"input-email": "Email",
-				"input-email-error": "Wrong Email address",
-				"input-name-placeholder": "Your Full Name",
-				"input-email-placeholder": "Your Email",
-				"btn-send": "Send",
-				"modal-success-title": "Request has been Sent!",
-				"modal-success-desc-1": "Thank you for interesting our company.",
-				"modal-success-desc-2": "Our manager will contact you soon!",
-				"modal-btn": "Back Home",
-
-
-				"contacts-title": "Our Contacts",
-				"table-col-account": "Number of accounts (up to)",
-				"table-col-discount": "Discount %",
-				"table-col-sync": "Synchronization cost",
-				"table-col-price": "Service cost <br/> (one acc. Per month - 60 sync.)",
-
-				"prices-desc": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated andgeneralized way making it easier to analyze data for it's clients. Specifically.",
-				"prices-warning": "Individual price offers for orders over 50,000 accounts",
-				"prices-modal-desc": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics.",
-
-				"phone": "Phone",
-				"contacts-form-title": "Have Question? Ask us!",
-				"contacts-form-message": "Message has been sent!",
-				"contacts-form-name": "Full Name",
-				"contacts-desc": "Upload the list of accounts using the administrative panel or via the corresponding API method.",
-
-				"about-desc-1": "Hypelitix was created by a developer team mainly working on social networks promotion and analytics. It's a paid web-service which provides publicly available Instagram profiles data in an automated and generalized way making it easier to analyze data for it's clients. Specifically, at the moment the service allows it's clients to obtain Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.",
-				"about-desc-2": "Our clients are digital marketing agencies who run advertising campaigns on Instagram using Instagram bloggers for publishing ads. In order to efficiently manage and run the campaigns, our clients need to track their bloggers' Instagram profiles to analyse bloggers \"bio\", posts' and stories' metadata and to make sure that links, \"mentions\" or hashtags which represent a particular brand are presented on the published media content or in the blogger's \"bio\".",
-				"about-desc-3": "To get access to Hypelitix features user requires Tokens - internal virtual currency. Tokens can be bought separately and are designed to use only within the Hypelitix service.",
-			}
-		},
-	},
-}, function (err, t) {
-	initDropdownLanguages()
-	translatePage(err, t)
-})
+function initMultiLanguage(resources) {
+	i18next.init({
+		lng: localStorage.getItem('lang') || defaultLanguages,
+		debug: false,
+		resources,
+	}, function (err, t) {
+		initDropdownLanguages(resources)
+		translatePage(err, t)
+	})
+}
 
 $('body').on('click', '.dropdown-lang .dropdown-menu a', function (e) {
 	e.preventDefault()
@@ -276,6 +96,24 @@ $('body').on('click', '.dropdown-lang .dropdown-menu a', function (e) {
 
 	$(this).remove()
 })
+
+// Get list of lang
+$.getJSON( "/lang", function(dataLangs) {
+	let resources = {}
+	for (let langRoute of dataLangs) {
+		// Load lang
+		$.getJSON( "/lang/"+langRoute, function(dataLang) {
+			resources[dataLang.name] = dataLang
+
+			const index = dataLangs.indexOf(langRoute)
+			dataLangs.splice(index, 1)
+
+			// If all lang have been load - init i18next with loaded res
+			if (dataLangs.length === 0) initMultiLanguage(resources)
+		})
+	}
+})
+
 
 
 //  Header

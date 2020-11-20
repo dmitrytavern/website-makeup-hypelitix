@@ -8,7 +8,11 @@ script(src=require('../../../js/vendor/vue.vendor.min').default)
 script(src=require('../../../js/vendor/i18next.vendor.min').default)
 
 each file in htmlWebpackPlugin.files.js
-	script(src=file)
+	if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
+		if file !== 'js/vendor.min.js'
+			script(src=file)
+	else
+		script(src=file)
 
 if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production' && htmlWebpackPlugin.options.modeCompileSplit && htmlWebpackPlugin.options.jsPage
 	script( src=htmlWebpackPlugin.options.routeDist.jsPages + '/' + htmlWebpackPlugin.options.filenameRoot + '.js' )

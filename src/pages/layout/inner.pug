@@ -3,12 +3,13 @@ include ../components/footer
 include ../components/dropdown
 
 doctype html
-html(lang="en")
+
+block inner-page-name
+html(lang="en" data-i18n-page=inner_page_name)
 	head
 		include parts/head
 		include parts/styles
 	body
-
 		include ../components/telegram
 
 		div.body-content

@@ -1,7 +1,10 @@
 extends layout/inner
 
 block title
-    title About Us - Hypelitix
+  title О нас - Hypelitix
+
+block inner-page-name
+  - var inner_page_name = 'links:about'
 
 block content
     section.about
@@ -9,7 +12,7 @@ block content
             img( src=require('../img/dots-3.png').default alt="").about__dot.decor-dot.dot-2
             .about__content
                 .title.about__title
-                    h1.h2(data-i18n="nav-about") About Us
+                    h1.h2 О нас
                     span.line
 
                 .about__image
@@ -17,20 +20,20 @@ block content
                     img.xs( src=require('../img/about-us-img-xs.png').default alt="")
 
                 .about__description
-                    p(data-i18n="about-desc-1")
+                    p
                         | Hypelitix was created by a developer team mainly working on social networks promotion and analytics.
                         | It's a paid web-service which provides publicly available Instagram profiles data in an automated
                         | and generalized way making it easier to analyze data for it's clients.
                         | Specifically, at the moment the service allows it's clients to obtain Instagram profile
                         | public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.
 
-                    p(data-i18n="about-desc-2")
+                    p
                         | Our clients are digital marketing agencies who run advertising campaigns on
                         | Instagram using Instagram bloggers for publishing ads. In order to efficiently manage and run the campaigns,
                         | our clients need to track their bloggers' Instagram profiles to analyse bloggers "bio", posts' and stories'
                         | metadata and to make sure that links, "mentions" or hashtags which represent a particular brand are presented
                         | on the published media content or in the blogger's "bio".
 
-                    p(data-i18n="about-desc-3")
+                    p
                         | To get access to Hypelitix features user requires Tokens - internal virtual currency.
                         | Tokens can be bought separately and are designed to use only within the Hypelitix service.
