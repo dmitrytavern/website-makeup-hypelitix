@@ -2,6 +2,7 @@ $(document).ready(function () {
 	document.body.classList.add('is-loaded')
 })
 
+// Send email
 function sendEmail(payload) {
 	$.ajax({
 		url: '/callback',
@@ -16,7 +17,9 @@ function sendEmail(payload) {
 		.fail(payload.callbackFail)
 }
 
+
 // Multilang
+const defaultLanguages = 'en'
 const languages = {'en': 'English', 'ru': 'Русский'}
 
 function initDropdownLanguages() {
@@ -55,7 +58,7 @@ function translatePage(err, t) {
 }
 
 i18next.init({
-	lng: localStorage.getItem('lang') || 'en',
+	lng: localStorage.getItem('lang') || defaultLanguages,
 	debug: false,
 	resources: {
 		ru: {
@@ -262,7 +265,8 @@ i18next.init({
 	translatePage(err, t)
 })
 
-$('body').on('click', '.dropdown-lang .dropdown-menu a', function () {
+$('body').on('click', '.dropdown-lang .dropdown-menu a', function (e) {
+	e.preventDefault()
 	const lng = $(this).attr('data-lng')
 
 	addDropdownLanguage(i18next.language, languages[i18next.language])
