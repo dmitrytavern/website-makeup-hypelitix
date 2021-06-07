@@ -1,17 +1,17 @@
 // Fonts
 
-$font: 'TTCommons';
-$font-size: 19px;
+$font: 'Inter';
+$font-size: 17px;
 $font-weight: normal;
 $line-height: unset;
 
 
 // Heading
 
-$h1-font-size: min(calc(36px + 31 * ((100vw - 375px) / 1545)), 60px);
-$h2-font-size: min(calc(32px + 16 * ((100vw - 375px) / 1545)), 44px);
+$h1-font-size: min(calc(34px + 31 * ((100vw - 375px) / 1545)), 60px);
+$h2-font-size: min(calc(28px + 16 * ((100vw - 375px) / 1545)), 44px);
 $h3-font-size: min(calc(24px + 6 * ((100vw - 375px) / 1545)), 28px);
-$h4-font-size: min(calc(18px + 6 * ((100vw - 375px) / 1545)), 22px);
+$h4-font-size: min(calc(17px + 6 * ((100vw - 375px) / 1545)), 22px);
 
 
 // Color
@@ -90,7 +90,7 @@ $link-color-active: #4831F2;
 $btn-border-radius: 2px;
 $btn-transition: border .3s;
 
-$btn-font: 'TTCommons Medium', sans-serif;
+$btn-font: 'Inter', sans-serif;
 $btn-font-weight: 500;
 $btn-font-size: 17px;
 $btn-padding: 11px 40px;

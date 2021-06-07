@@ -6,10 +6,10 @@ if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
           link(href=file rel="preload" as="style")
 
     link(href="css/disabled.css" rel="preload" as="style")
-    link(href=require('../../../fonts/TTCommons/TTCommons-Regular.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
-    link(href=require('../../../fonts/TTCommons/TTCommons-Bold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
-    link(href=require('../../../fonts/TTCommons/TTCommons-DemiBold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
-    link(href=require('../../../fonts/TTCommons/TTCommons-Medium.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/Inter/Inter-Regular.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/Inter/Inter-Bold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/Inter/Inter-SemiBold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
+    link(href=require('../../../fonts/Inter/Inter-Medium.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
     link(href=require('../../../fonts/icomoon/icomoon.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
 
     each file in htmlWebpackPlugin.files.css

@@ -19,14 +19,10 @@
     position: relative
     z-index: 2
 
-  h2
-    font-weight: 600
-    font-family: 'TTCommons DemiBold', sans-serif
-
   p
     margin-top: 25px
     color: #2B2B2B
-    font-size: min(calc(18px + 2 * ((100vw - 375px) / 1545)), 19px)
+    font-size: min(calc(17px + 2 * ((100vw - 375px) / 1545)), 19px)
     max-width: 655px
 
   &__btn
@@ -34,12 +30,14 @@
     padding-left: 36px
     padding-right: 36px
 
-@media screen and (max-width: 1439px)
+@media screen and (max-width: 1600px)
   .intro
     &__container
-      padding-top: 180px
-      padding-bottom: 150px
+      padding-top: 210px
+      padding-bottom: 180px
 
+@media screen and (max-width: 1439px)
+  .intro
     p
       max-width: 560px
 
@@ -50,7 +48,7 @@
 @media screen and (max-width: 991px)
   .intro
     p
-      max-width: 500px
+      max-width: 440px
 
     &__image
       right: -105px
@@ -78,7 +76,7 @@
 @media screen and (max-width: 500px)
   .intro
     h2
-      font-size: min(calc(28px + 31*(100vw - 375px)/1545),60px)
+      font-size: min(calc(30px + 31*(100vw - 375px)/1545),60px)
 
     p
       max-width: 310px
