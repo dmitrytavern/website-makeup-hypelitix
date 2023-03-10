@@ -35,14 +35,14 @@ function initDropdownLanguages(languages) {
 function addDropdownLanguage(lang, langFull) {
 	$('.dropdown-lang .dropdown-menu').append('<a class="dropdown-item" data-lng="'+lang+'" hreflang="'+lang+'" href="#">\n' +
 		'                                    <svg class="dropdown-lang__ico">\n' +
-		'                                        <use xlink:href="/img/icons/sprite.svg#lang-'+lang+'"></use>\n' +
+		'                                        <use xlink:href="img/icons/sprite.svg#lang-'+lang+'"></use>\n' +
 		'                                    </svg>\n' +
 		'                                    <span>'+langFull+'</span>\n' +
 		'                                </a>')
 }
 
 function changeDropdownLanguage(lang) {
-	$('.dropdown-lang .dropdown-front svg use').attr('xlink:href', '/img/icons/sprite.svg#lang-'+lang)
+	$('.dropdown-lang .dropdown-front svg use').attr('xlink:href', 'img/icons/sprite.svg#lang-'+lang)
 }
 
 function translatePage(err, t) {
@@ -101,11 +101,11 @@ $('body').on('click', '.dropdown-lang .dropdown-menu a', function (e) {
 })
 
 // Get list of lang
-$.getJSON( "/lang/index.json", function(dataLangs) {
+$.getJSON( "lang/index.json", function(dataLangs) {
 	let resources = {}
 	for (let langRoute of dataLangs) {
 		// Load lang
-		$.getJSON( "/lang/"+langRoute, function(dataLang) {
+		$.getJSON( "lang/"+langRoute, function(dataLang) {
 			resources[dataLang.name] = dataLang
 
 			const index = dataLangs.indexOf(langRoute)

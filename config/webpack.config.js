@@ -5,6 +5,8 @@ const dotenv 		= require('dotenv');
 
 dotenv.config();
 
+process.env.APP_PUBLIC_PATH = process.env.APP_PUBLIC_PATH ? process.env.APP_PUBLIC_PATH : '/' 
+
 // Default
 
 const modeCompileSplit 		= process.env.COMPILE_TYPE === 'split'
@@ -53,6 +55,7 @@ const pages = fs
 		routeDist,
 		modeCompileSplit,
 		env: process.env,
+		route: (str) => path.join(process.env.APP_PUBLIC_PATH, str),
 		template:  path.join(routeRes.pages, page),
 		filename:  path.join(prodDir, page.replace('.pug', '.html')),
 		filenameRoot: page.replace('.pug', ''),
@@ -69,7 +72,7 @@ const rules = {
 		options: {
 			name: path.join('[name].[ext]'),
 			outputPath: 'img/icons',
-			publicPath: '/img/icons',
+			publicPath: path.join(process.env.APP_PUBLIC_PATH, 'img/icons'),
 		}
 	},
 	pug: {
@@ -89,7 +92,7 @@ const rules = {
 				options: {
 					name: path.join('[name].[ext]'),
 					outputPath: 'fonts',
-					publicPath: '/fonts',
+					publicPath: path.join(process.env.APP_PUBLIC_PATH, 'fonts'),
 				},
 			},
 		],
@@ -101,8 +104,8 @@ const rules = {
 				loader: 'file-loader',
 				options: {
 					name: path.join('[name].[ext]'),
-					publicPath: '/img',
 					outputPath: 'img',
+					publicPath: path.join(process.env.APP_PUBLIC_PATH, 'img'),
 				},
 			},
 		],

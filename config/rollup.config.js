@@ -15,4 +15,4 @@ const array = fs
 	})
 
 
-export default modeCompileSplit ? array : process.exit()
+export default modeCompileSplit ? array : []

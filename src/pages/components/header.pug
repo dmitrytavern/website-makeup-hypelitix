@@ -4,7 +4,7 @@ mixin header(theme)
             .header__wrapper
                 .row
                     .col-7.col-md-5.col-lg-3.header__column
-                        a(href="/").logo
+                        a(href=htmlWebpackPlugin.options.route('index.html')).logo
                             svg
                                 use(xlink:href=require('../img/sprite/sprite.svg').default + '#logo' )
 
@@ -20,10 +20,14 @@ mixin header(theme)
 
                         nav.header__nav
                             ul
-                                li <a href="/about.html" data-i18n="nav-about" data-i18n-link="links:about">About Us</a>
-                                li <a href="/prices.html" data-i18n="nav-prices">Prices</a>
-                                li <a href="/contacts.html" data-i18n="nav-contacts">Contact Us</a>
-                                li <a href="#" data-i18n="nav-login">Log In</a>
+                                li 
+                                    a(href=htmlWebpackPlugin.options.route("/about.html") data-i18n="nav-about" data-i18n-link="links:about") About Us
+                                li 
+                                    a(href=htmlWebpackPlugin.options.route("/prices.html") data-i18n="nav-prices") Prices
+                                li 
+                                    a(href=htmlWebpackPlugin.options.route("/contacts.html") data-i18n="nav-contacts") Contact Us
+                                li 
+                                    a(href="#" data-i18n="nav-login") Log In
 
                     .col-md-5.col-lg-3.header__column
                         .header__contacts.social-media
@@ -42,9 +46,12 @@ mixin header(theme)
 
                 .menu__body
                     ul.list
-                        li <a href="/about.html" data-i18n="nav-about" data-i18n-link="links:about">About Us</a>
-                        li <a href="/prices.html" data-i18n="nav-prices">Prices</a>
-                        li <a href="/contacts.html" data-i18n="nav-contacts">Contact Us</a>
+                        li 
+                            a(href=htmlWebpackPlugin.options.route('about.html') data-i18n="nav-about" data-i18n-link="links:about") About Us
+                        li
+                            a(href=htmlWebpackPlugin.options.route('prices.html') data-i18n="nav-prices" data-i18n-link="links:prices") Prices
+                        li
+                            a(href=htmlWebpackPlugin.options.route('contacts.html') data-i18n="nav-contacts" data-i18n-link="links:contacts") Contact Us
 
             .menu__footer
                 .menu__email <a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a>
