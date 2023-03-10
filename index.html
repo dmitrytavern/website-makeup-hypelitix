@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hypelitix - Automated analize Instagram Data</title>
+    <meta property="og:image" content="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/header-img.png">
+    <meta name="theme-color" content="#4831F2">
+    <meta name="description" content="Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.">
+    <meta name="keywords" content="Hypelitix, instagram, track instagram profile, instagram data, analize">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="120x120" href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/favicon/favicon-120x120.png">
+    <link rel="icon" type="image/png" sizes="24x24" href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/favicon/favicon-24x24.png">
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/css/app.min.css" rel="preload" as="style">
+<link href="css/disabled.css" rel="preload" as="style">
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/fonts/Inter-Regular.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/fonts/Inter-Bold.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/fonts/Inter-SemiBold.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/fonts/Inter-Medium.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/fonts/icomoon.ttf" rel="preload" as="font" type="font/ttf" crossorigin>
+<link href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/css/app.min.css" rel="stylesheet">
+<link href="css/disabled.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="container fixed-telegram__container"><a class="fixed-telegram" href="#">
+    <div class="fixed-telegram__point"></div><i class="icon-contact-telegram"></i><span data-i18n="chat-text">We are Online!</span></a></div>
+    <div class="body-content">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <div class="row">
+              <div class="col-7 col-md-5 col-lg-3 header__column"><a class="logo" href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/index.html">
+                  <svg>
+                    <use xlink:href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/icons/sprite.svg#logo"></use>
+                  </svg></a>
+                <div class="header__lang">
+<div class="dropdown dropdown-lang">
+  <div class="btn dropdown-btn btn-secondary" data-toggle="dropdown">
+    <div class="dropdown-front">
+      <svg class="dropdown-lang__ico">
+        <use xlink:href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/icons/sprite.svg#lang-en"></use>
+      </svg>
+    </div>
+    <svg class="dropdown-ico" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="17" height="17" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+  <div class="dropdown-menu"></div>
+</div>
+                </div>
+              </div>
+              <div class="col-5 col-md-2 col-lg-6 header__column">
+                <div class="header__menu" id="header-menu-btn"><span></span><span></span><span></span></div>
+                <nav class="header__nav">
+                  <ul>
+                    <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/about.html" data-i18n="nav-about" data-i18n-link="links:about">About Us</a></li>
+                    <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/prices.html" data-i18n="nav-prices">Prices</a></li>
+                    <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/contacts.html" data-i18n="nav-contacts">Contact Us</a></li>
+                    <li> <a href="#" data-i18n="nav-login">Log In</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-md-5 col-lg-3 header__column">
+                <div class="header__contacts social-media"><a class="icon-contact-telegram" href="#"></a><a class="icon-contact-whatsapp" href="#"></a><a class="icon-contact-viber" href="#"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="menu">
+        <div class="menu__wrapper">
+          <div class="menu__content">
+            <div class="menu__header">
+              <div class="menu__lang">
+<div class="dropdown dropdown-lang">
+  <div class="btn dropdown-btn btn-secondary" data-toggle="dropdown">
+    <div class="dropdown-front">
+      <svg class="dropdown-lang__ico">
+        <use xlink:href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/icons/sprite.svg#lang-en"></use>
+      </svg>
+    </div>
+    <svg class="dropdown-ico" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="17" height="17" stroke="currentColor" stroke-width="2">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+  <div class="dropdown-menu"></div>
+</div>
+              </div><a class="menu__login" href="#" data-i18n="nav-login">Log In</a>
+            </div>
+            <div class="menu__body">
+              <ul class="list">
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/about.html" data-i18n="nav-about" data-i18n-link="links:about">About Us</a></li>
+                <li><a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/prices.html" data-i18n="nav-prices" data-i18n-link="links:prices">Prices</a></li>
+                <li><a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/contacts.html" data-i18n="nav-contacts" data-i18n-link="links:contacts">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu__footer">
+            <div class="menu__email"><a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a></div>
+            <div class="social-media"><a class="icon-contact-telegram" href="#"></a><a class="icon-contact-whatsapp" href="#"></a><a class="icon-contact-viber" href="#"></a></div>
+          </div>
+        </div>
+      </div>
+      <main>
+<section class="intro">
+  <div class="container intro__container">
+    <div class="intro__content">
+      <h2 class="h1" data-i18n="home-intro-title">Automated analize<br/>Instagram Data</h2>
+      <p data-i18n="home-intro-description">Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.</p>
+      <button class="intro__btn btn btn-primary" data-toggle="modal" data-target="#modal-access" data-i18n="btn-get-access">Get Access</button>
+    </div>
+    <picture>
+      <source srcset="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/header-img.png" media="(min-width: 768px)"><img class="intro__image" src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/header-img-xs.png" alt="">
+    </picture>
+  </div>
+</section>
+<section class="services">
+  <div class="container">
+    <div class="section-title align-center">
+      <h2 data-i18n="home-services-title">Why you need Hypelitix</h2><span class="line"></span>
+    </div>
+    <div class="items">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 items__item"><i class="icon-search"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+          <p data-i18n="home-services-service-1">Find bloggers and influencers who will reach your target audience.</p>
+        </div>
+        <div class="col-md-6 col-lg-3 items__item"><i class="icon-profile"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+          <p data-i18n="home-services-service-2">Find out which bloggers will yield results and who will not bring sales or subscribers.</p>
+        </div>
+        <div class="col-md-6 col-lg-3 items__item"><i class="icon-alert"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+          <p data-i18n="home-services-service-3">Don’t waste your budget on inflated blogger accounts with fake followers.</p>
+        </div>
+        <div class="col-md-6 col-lg-3 items__item"><i class="icon-histogram"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+          <p data-i18n="home-services-service-4">Analyse the quality and growth of instagram followers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="demonstration">
+  <div class="container"><img class="demonstration__dot decor-dot dot-1" src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/dots-1.png" alt="">
+    <div class="demonstration__title section-title">
+      <h2 data-i18n="home-demonstration-title">How It works</h2><span class="line"></span>
+    </div>
+    <div class="demonstration__content">
+      <section class="demonstration__section">
+        <div class="demonstration__section-title"><span>01.</span>
+          <h3 data-i18n="home-demonstration-1-title">Add Instagram Accounts</h3>
+        </div>
+        <div class="demonstration__section-icon"><img src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/service-1.png" alt=""></div>
+        <div class="demonstration__section-description">
+          <p data-i18n="home-demonstration-1-desc">Upload the list of accounts using the administrative panel or via the corresponding API method.</p>
+          <ul class="list">
+            <li data-i18n="home-demonstration-list-1">Upload by using .xls</li>
+            <li data-i18n="home-demonstration-list-2">Support API method</li>
+          </ul>
+        </div>
+      </section>
+      <div class="demonstration__spliter demonstration__spliter_first"><i class="icon-arrow-bottom"></i></div>
+      <section class="demonstration__section demonstration__section_revert">
+        <div class="demonstration__section-title"><span>02.</span>
+          <h3 data-i18n="home-demonstration-2-title">Track User’s Stories, Posts</h3>
+        </div>
+        <div class="demonstration__section-icon"><img src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/service-2.png" alt=""></div>
+        <div class="demonstration__section-description">
+          <p data-i18n="home-demonstration-2-desc">Track profile posts' and stories' metadata in order to filter them by hashtags and mentions.</p>
+          <ul class="list">
+            <li data-i18n="home-demonstration-list-3">Instant notification via Webhocks</li>
+            <li data-i18n="home-demonstration-list-4">Caching data for 14 days</li>
+          </ul>
+        </div>
+      </section>
+      <div class="demonstration__spliter"><span></span><i class="icon-arrow-bottom"></i><span></span></div>
+      <section class="demonstration__section">
+        <div class="demonstration__section-title"><span>03.</span>
+          <h3 data-i18n="home-demonstration-3-title">Get your Result!</h3>
+        </div>
+        <div class="demonstration__section-icon"><img src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/service-3.png" alt=""></div>
+        <div class="demonstration__section-description">
+          <p data-i18n="home-demonstration-3-desc">Upload the list of accounts using the administrative panel or via the corresponding API method.</p>
+          <ul class="list">
+            <li data-i18n="home-demonstration-list-5">Upload by using .xls</li>
+            <li data-i18n="home-demonstration-list-6">Support API method</li>
+          </ul>
+          <div class="btn btn-primary" data-toggle="modal" data-target="#modal-access" data-i18n="btn-get-access">Get Access</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<section class="statistics">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="statistics__item">
+          <div class="statistics__item-count">1267</div>
+          <div class="statistics__item-name" data-i18n="home-statistic-1-title">Cached Stories</div>
+          <div class="statistics__item-method" data-i18n="home-statistic-time">(Every hour)</div><span class="line"></span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="statistics__item statistics__item_large">
+          <div class="statistics__item-count">295k</div>
+          <div class="statistics__item-name" data-i18n="home-statistic-2-title">Tracked Profiles</div><span class="line"></span>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="statistics__item">
+          <div class="statistics__item-count">898</div>
+          <div class="statistics__item-name" data-i18n="home-statistic-3-title">Cached Posts</div>
+          <div class="statistics__item-method" data-i18n="home-statistic-time">(Every hour)</div><span class="line"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariff-plan"><img class="tariff-plan__dot decor-dot dot-2" src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/dots-3.png" alt="">
+  <div class="container">
+    <div class="tariff-plan__wrapper">
+      <div class="tariff-plan__content">
+        <h2 data-i18n="home-tariff-plan-title">Calculate Your Own Tariff Plan</h2>
+        <p data-i18n="home-tariff-plan-desc">Flexible Billing System. Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.</p>
+        <div class="tariff-plan__btn btn btn-primary" data-toggle="modal" data-target="#modal-access" data-i18n="home-tariff-plan-btn">Automate your Analytics</div>
+      </div>
+      <div class="tariff-plan__calculator calculator" id="calculator">
+        <div class="calculator__wrapper">
+          <div class="calculator__progress">
+            <svg class="calculator__progress-line">
+              <circle cx="217" cy="217" r="217" :style="circleStyleDesktop"></circle>
+              <circle cx="150" cy="150" r="150" :style="circleStyleMobile"></circle>
+            </svg><span class="calculator__progress-round" :style="roundStyle" @mousedown="roundMouseDown" @touchstart="roundTouchDown"><span></span></span>
+          </div>
+          <div class="calculator__dots">
+            <div class="calculator__dot" v-for="(plan, index) in plans" :class="{'is-active': plan.active, 'is-current': plan.current}" :style="{transform: `rotate(${index * 22.5}deg) translateY(-50%)`}" @dragstart="() =&gt; false"><span @click="changePlan(index)" @mouseover="toPlan(index)" @dragstart="() =&gt; false" :data-plan="index"></span></div>
+          </div>
+          <div class="calculator__content" :class="{'is-no-select': moving}"><span class="calculator__content-price h2">{{ activePlan.price }}</span><span data-i18n="home-tariff-plan-price">(for 1 acc per month)</span><span class="calculator__content-account"><span data-i18n="home-tariff-plan-up">up to</span> <span class="primary">{{ activePlan.accounts }}</span> <span data-i18n="home-tariff-plan-accounts">accounts</span></span></div>
+        </div>
+        <div class="calculator__btn tariff-plan__btn btn btn-primary" data-toggle="modal" data-target="#modal-access" data-i18n="home-tariff-plan-btn">Automate your Analytics</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pluses">
+  <div class="container">
+    <div class="section-title">
+      <h2 data-i18n="home-pluses-title">Why choose us</h2><span class="line"></span>
+    </div>
+    <div class="pluses__items">
+      <div class="row">
+        <div class="col-12 col-md-4 pluses__item"><i class="icon-video-player-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+          <p data-i18n="home-pluses-1">A unique service on the market for downloading and caching stories, including all media content.</p>
+        </div>
+        <div class="col-12 col-md-4 pluses__item"><i class="icon-cloud-vision-api"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+          <p><span data-i18n="home-pluses-2-1">Ready support for</span> <a href="#" class="link">Google AI Vision API</a> <span data-i18n="home-pluses-2-2">for OCR from images.</span></p>
+        </div>
+        <div class="col-12 col-md-4 pluses__item"><i class="icon-save-money"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+          <p data-i18n="home-pluses-3">Individual approach to clients. We are ready to work with clients' tasks and adapt our services to them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-3 footer__logo-col"><a class="logo footer__logo" href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/index.html">
+              <svg>
+                <use xlink:href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/img/icons/sprite.svg#logo"></use>
+              </svg></a>
+            <p class="footer__copyright">© 2020 Hypelitix. <span data-i18n="footer-copyright">All rights reserved.</span></p>
+          </div>
+          <div class="col-12 col-md-8 col-lg-5 footer__navigation-col">
+            <nav class="footer__navigation">
+              <ul>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/about_en.html" data-i18n="nav-about" data-i18n-link="links:about">About Us</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/terms-of-service_en.html" data-i18n="nav-terms" data-i18n-link="links:terms">Terms of Service</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/prices.html" data-i18n="nav-prices">Prices</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/privacy-policy_en.html" data-i18n="nav-privacy-policy" data-i18n-link="links:privacy-policy">Privacy Policy</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/contacts.html" data-i18n="nav-contacts">Contact Us</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/public-offer-agreement_en.html" data-i18n="nav-offer" data-i18n-link="links:offer">Public Offer Agreement</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/api-documentation_en.html" data-i18n="nav-api" data-i18n-link="links:api-docs">API Docs</a></li>
+                <li> <a href="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/cookie-policy_en.html" data-i18n="nav-cookie" data-i18n-link="links:cookie">Cookie Policy</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3 offset-lg-1">
+            <div class="footer__title" data-i18n="footer-link">Get in Touch</div>
+            <div class="footer__contacts"><a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a><a class="footer__contacts-tel" href="tel: +380931539090">+380 93 153 90 90</a>
+              <div class="footer__contacts-media social-media"><a class="icon-contact-telegram" href="#"></a><a class="icon-contact-whatsapp" href="#"></a><a class="icon-contact-viber" href="#"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+<div class="modal" id="modal-access">
+  <div class="modal__wrapper">
+    <div class="modal__close" data-dismiss="modal"><i class="icon-close"></i></div>
+    <div class="modal__tab is-active" data-name="form">
+      <h2 class="modal__title" data-i18n="modal-title">Access Request</h2>
+      <form method="POST" action="/callback" id="modal-access-form">
+        <div class="input-group modal__input">
+          <div class="input__label" data-i18n="input-name">Name</div>
+          <input class="is-modal-input" type="text" name="name" placeholder="Full Name" data-i18n-placeholder="input-name-placeholder">
+          <div class="input__error"><i>!</i><span data-i18n="input-name-error">Wrong name</span></div>
+        </div>
+        <div class="input-group modal__input">
+          <div class="input__label" data-i18n="input-email">Email</div>
+          <input class="is-modal-input" type="email" name="email" placeholder="Email" data-i18n-placeholder="input-email-placeholder">
+          <div class="input__error"><i>!</i><span data-i18n="input-email-error">Wrong Email address</span></div>
+        </div>
+        <div class="form-error-text">No error</div>
+        <button class="btn btn-primary modal__btn modal__btn-send" type="submit" data-i18n="btn-send">Send</button>
+      </form>
+    </div>
+    <div class="modal__tab" data-name="success">
+      <h3 class="modal__subtitle" data-i18n="modal-success-title">Request has been Sent!</h3>
+      <p><span data-i18n="modal-success-desc-1">Thank you for interesting our company.</span><br> <span data-i18n="modal-success-desc-2">Our manager will contact you soon!</span></p><a class="btn btn-primary modal__btn align-center modal__btn-success" href="#" data-dismiss="modal" data-i18n="modal-btn">Back Home</a>
+    </div>
+  </div>
+</div>
+<div class="modal-custom-backdrop"></div>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/jquery.vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/popper.vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/bootstrap.vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/vue.vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/i18next.vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/vendor.min.js"></script>
+<script src="'/'APP_PUBLIC_PATH=/website-makeup-hypelitix/js/app.min.js"></script>
+  </body>
+</html>
