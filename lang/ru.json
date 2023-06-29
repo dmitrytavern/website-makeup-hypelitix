@@ -2,12 +2,12 @@
   "name": "ru",
   "nameFull": "Русский",
   "links": {
-    "about": "/about_ru.html",
-    "terms": "/terms-of-service_ru.html",
-    "privacy-policy": "/privacy-policy_ru.html",
-    "offer": "/public-offer-agreement_ru.html",
-    "api-docs": "/api-documentation_ru.html",
-    "cookie": "/cookie-policy_ru.html"
+    "about": "about_ru.html",
+    "terms": "terms-of-service_ru.html",
+    "privacy-policy": "privacy-policy_ru.html",
+    "offer": "public-offer-agreement_ru.html",
+    "api-docs": "api-documentation_ru.html",
+    "cookie": "cookie-policy_ru.html"
   },
   "translation": {
     "nav-about": "О нас",

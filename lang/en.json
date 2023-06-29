@@ -2,12 +2,12 @@
   "name": "en",
   "nameFull": "English",
   "links": {
-    "about": "/about_en.html",
-    "terms": "/terms-of-service_en.html",
-    "privacy-policy": "/privacy-policy_en.html",
-    "offer": "/public-offer-agreement_en.html",
-    "api-docs": "/api-documentation_en.html",
-    "cookie": "/cookie-policy_en.html"
+    "about": "about_en.html",
+    "terms": "terms-of-service_en.html",
+    "privacy-policy": "privacy-policy_en.html",
+    "offer": "public-offer-agreement_en.html",
+    "api-docs": "api-documentation_en.html",
+    "cookie": "cookie-policy_en.html"
   },
   "translation": {
     "nav-about": "About Us",
