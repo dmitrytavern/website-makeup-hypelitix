@@ -50,7 +50,7 @@ function translatePage(err, t) {
 	// Redirect to inner pages of selected lang
 	$('html[data-i18n-page]').each(function (index, item) {
 		const link = item.getAttribute('data-i18n-page')
-		if (window.location.pathname !== t(link)) {
+		if (!window.location.pathname.match(t(link))) {
 			redirect = true
 			window.location.href = t(link)
 		}

@@ -33,7 +33,7 @@ module.exports = {
   output: {
     filename: path.join(routeDist.js, names.appJS),
     publicPath: process.env.APP_PUBLIC_PATH,
-    path: prodDir,
+		path: path.join(prodDir, process.env.APP_PUBLIC_PATH)
   },
   devServer: {
     contentBase: prodDir,

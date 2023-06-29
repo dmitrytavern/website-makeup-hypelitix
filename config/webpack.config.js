@@ -57,12 +57,10 @@ const pages = fs
 		env: process.env,
 		route: (str) => path.join(process.env.APP_PUBLIC_PATH, str),
 		template:  path.join(routeRes.pages, page),
-		filename:  path.join(prodDir, page.replace('.pug', '.html')),
+		filename:  path.join(prodDir, process.env.APP_PUBLIC_PATH, page.replace('.pug', '.html')),
 		filenameRoot: page.replace('.pug', ''),
 		jsPage: fs.existsSync(routeDist.jsPages + '/' + page.replace('.pug', '.js'))
 	}))
-
-
 
 const rules = {
 	js:  {test: /\.(js)$/, exclude: /node_modules/, loader: 'babel-loader'},

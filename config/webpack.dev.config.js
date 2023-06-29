@@ -26,7 +26,8 @@ module.exports = {
 	},
 	output: {
 		filename: path.join(routeDist.js, names.appJS),
-		path: prodDir
+		publicPath: process.env.APP_PUBLIC_PATH,
+		path: path.join(prodDir, process.env.APP_PUBLIC_PATH)
 	},
 	devServer: {
 		contentBase: prodDir,
@@ -58,7 +59,7 @@ module.exports = {
 						options: {
 							name: path.join('[name].[ext]'),
 							outputPath: 'js',
-							publicPath: '/js',
+							publicPath: path.join(process.env.APP_PUBLIC_PATH, 'js'),
 						},
 					},
 				]

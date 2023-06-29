@@ -5,7 +5,6 @@ if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
       if file.search('.min') > -1
           link(href=file rel="preload" as="style")
 
-    link(href="css/disabled.css" rel="preload" as="style")
     link(href=require('../../../fonts/Inter/Inter-Regular.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
     link(href=require('../../../fonts/Inter/Inter-Bold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
     link(href=require('../../../fonts/Inter/Inter-SemiBold.ttf').default rel="preload" as="font" type="font/ttf" crossorigin)
@@ -15,5 +14,3 @@ if htmlWebpackPlugin.options.env["NODE_ENV"] === 'production'
     each file in htmlWebpackPlugin.files.css
         if file.search('.min') > -1
             link(href=file rel="stylesheet")
-
-    link(href="css/disabled.css" rel="stylesheet")

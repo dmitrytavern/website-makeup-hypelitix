@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Setup public path
-        run: echo "APP_PUBLIC_PATH=/${{ github.event.repository.name }}/" >> .env
+        run: echo -e "\nAPP_PUBLIC_PATH = '/${{ github.event.repository.name }}/'" >> .env
 
       - name: Build
         run: npm run build
@@ -34,4 +34,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/
+          publish_dir: dist/${{ github.event.repository.name }}/
