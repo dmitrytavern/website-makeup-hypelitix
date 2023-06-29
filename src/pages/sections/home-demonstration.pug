@@ -1,6 +1,8 @@
 section.demonstration
     .container
-        img.demonstration__dot.decor-dot.dot-1( src=require('../../img/dots-1.png').default alt="" )
+        picture
+            source(srcset=require('../../img/dots-1.webp').default, type="image/webp")
+            img( src=require('../../img/dots-1.png').default alt="" width="212px" height="80px").demonstration__dot.decor-dot.dot-1
 
         .demonstration__title.section-title
             h2( data-i18n="home-demonstration-title" ) How It works
@@ -14,7 +16,9 @@ section.demonstration
                     h3( data-i18n="home-demonstration-1-title" ) Add Instagram Accounts
 
                 .demonstration__section-icon
-                    img( src=require('../../img/service-1.png').default alt="")
+                    picture
+                        source(srcset=require('../../img/service-1.webp').default, type="image/webp")
+                        img( src=require('../../img/service-1.png').default alt="" width="375px" height="322px")
 
                 .demonstration__section-description
                     p(data-i18n="home-demonstration-1-desc") Upload the list of accounts using the administrative panel or via the corresponding API method.
@@ -32,7 +36,9 @@ section.demonstration
                     h3(data-i18n="home-demonstration-2-title") Track User’s Stories, Posts
 
                 .demonstration__section-icon
-                    img( src=require('../../img/service-2.png').default alt="")
+                    picture
+                        source(srcset=require('../../img/service-2.webp').default, type="image/webp")
+                        img( src=require('../../img/service-2.png').default alt="" width="375px" height="322px")
 
                 .demonstration__section-description
                     p(data-i18n="home-demonstration-2-desc") Track profile posts' and stories' metadata in order to filter them by hashtags and mentions.
@@ -52,7 +58,9 @@ section.demonstration
                     h3(data-i18n="home-demonstration-3-title") Get your Result!
 
                 .demonstration__section-icon
-                    img( src=require('../../img/service-3.png').default alt="")
+                    picture
+                        source(srcset=require('../../img/service-1.webp').default, type="image/webp")
+                        img( src=require('../../img/service-3.png').default alt="" width="375px" height="322px")
 
                 .demonstration__section-description
                     p(data-i18n="home-demonstration-3-desc") Upload the list of accounts using the administrative panel or via the corresponding API method.

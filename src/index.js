@@ -6,7 +6,9 @@
 import './css/global.sass'
 import './css/fonts.sass'
 import './css/core.sass'
-
+import './lang/en.json'
+import './lang/ru.json'
+import './lang/index.json'
 
 /*
 * 	Import svg

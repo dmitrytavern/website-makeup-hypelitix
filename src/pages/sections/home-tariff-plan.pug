@@ -1,5 +1,8 @@
 section.tariff-plan
-    img.tariff-plan__dot.decor-dot.dot-2( src=require('../../img/dots-3.png').default alt="")
+    picture
+        source(srcset=require('../../img/dots-3.webp').default, type="image/webp")
+        img( src=require('../../img/dots-3.png').default alt="" width="212px" height="168px").tariff-plan__dot.decor-dot.dot-2
+
     .container
         .tariff-plan__wrapper
             .tariff-plan__content

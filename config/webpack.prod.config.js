@@ -52,8 +52,6 @@ module.exports = {
     }),
     new ClassCopyPlugin({
       patterns: [
-        { from: routeRes.favicon, to: routeDist.favicon },
-        { from: routeRes.sprite, to: routeDist.sprite },
         { from: "src/lang/", to: "lang" },
       ],
     }),

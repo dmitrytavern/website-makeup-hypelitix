@@ -6,5 +6,7 @@ section.intro
             button.intro__btn.btn.btn-primary(data-toggle="modal" data-target="#modal-access" data-i18n="btn-get-access") Get Access
 
         picture
+            source(srcset=require('../../img/header-img.webp').default, media="(min-width: 768px)" type="image/webp")
             source(srcset=require('../../img/header-img.png').default media="(min-width: 768px)")
-            img.intro__image(src=require('../../img/header-img-xs.png').default alt="")
+            source(srcset=require('../../img/header-img-xs.webp').default, type="image/webp")
+            img.intro__image(src=require('../../img/header-img-xs.png').default alt="" width="350px" height="470px")

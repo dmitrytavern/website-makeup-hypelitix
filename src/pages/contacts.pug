@@ -30,7 +30,10 @@ block content
 
                 .col-12.col-lg-6
                     .contacts__form-question.form-question
-                        img(src=require('../img/dots-1.png').default alt="").form-question__dot.decor-dot.dot-1
+                        picture
+                            source(srcset=require('../img/dots-1.webp').default, type="image/webp")
+                            img( src=require('../img/dots-1.png').default alt="" width="212px" height="80px").form-question__dot.decor-dot.dot-1
+                        
                         .form-question__wrapper
                             h2.form-question__title(data-i18n="contacts-form-title") Have Question? Ask us!
 

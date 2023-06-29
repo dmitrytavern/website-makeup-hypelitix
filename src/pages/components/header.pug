@@ -4,7 +4,7 @@ mixin header(theme)
             .header__wrapper
                 .row
                     .col-7.col-md-5.col-lg-3.header__column
-                        a(href=htmlWebpackPlugin.options.route('index.html')).logo
+                        a(href=htmlWebpackPlugin.options.route('index.html') aria-label="Go to home").logo
                             svg
                                 use(xlink:href=require('../img/sprite/sprite.svg').default + '#logo' )
 
@@ -31,9 +31,9 @@ mixin header(theme)
 
                     .col-md-5.col-lg-3.header__column
                         .header__contacts.social-media
-                            a(href="#").icon-contact-telegram
-                            a(href="#").icon-contact-whatsapp
-                            a(href="#").icon-contact-viber
+                            a(href="#" aria-label="Go to telegram").icon-contact-telegram
+                            a(href="#" aria-label="Go to whatsapp").icon-contact-whatsapp
+                            a(href="#" aria-label="Go to viber").icon-contact-viber
 
     .menu
         .menu__wrapper
@@ -56,6 +56,6 @@ mixin header(theme)
             .menu__footer
                 .menu__email <a href="mailto: contact@hypelitix.com">contact@hypelitix.com</a>
                 .social-media
-                    a(href="#").icon-contact-telegram
-                    a(href="#").icon-contact-whatsapp
-                    a(href="#").icon-contact-viber
+                    a(href="#" aria-label="Go to telegram").icon-contact-telegram
+                    a(href="#" aria-label="Go to whatsapp").icon-contact-whatsapp
+                    a(href="#" aria-label="Go to viber").icon-contact-viber

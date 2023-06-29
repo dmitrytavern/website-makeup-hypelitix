@@ -12,14 +12,6 @@ if HTMLoptions.env["NODE_ENV"] === 'production'
 	meta(name="theme-color" content=HTMLoptions.env["COLOR_THEME"])
 	meta(name="description" content="Instagram profile public data and to track profile posts' and stories' metadata in order to filter them by hashtags and mentions.")
 	meta(name="keywords" content="Hypelitix, instagram, track instagram profile, instagram data, analize")
-
-	link(rel="icon" type="image/svg+xml" sizes="any" href=htmlWebpackPlugin.options.route("img/favicon/favicon.svg"))
-	link(rel="icon" type="image/png" sizes="120x120" href=htmlWebpackPlugin.options.route('img/favicon/favicon-120x120.png'))
-	link(rel="icon" type="image/png" sizes="24x24" href=htmlWebpackPlugin.options.route('img/favicon/favicon-24x24.png'))
-
-	if HTMLoptions.favicon
-		link(rel="apple-touch-icon" sizes="180x180" href=htmlWebpackPlugin.options.route('img/apple-touch-icon.png'))
-		link(rel="icon" type="image/png" sizes="32x32" href=htmlWebpackPlugin.options.route('img/favicon-32x32.png'))
-		link(rel="icon" type="image/png" sizes="16x16" href=htmlWebpackPlugin.options.route('img/favicon-16x16.png'))
-		link(rel="manifest" href=htmlWebpackPlugin.options.route('img/site.webmanifest'))
-		link(rel="mask-icon" href='img/safari-pinned-tab.svg' color=HTMLoptions.env["COLOR_THEME"])
+	link(rel="icon" type="image/svg+xml" sizes="any" href=require('../img/favicon/favicon.svg').default)
+	link(rel="icon" type="image/png" sizes="120x120" href=require('../img/favicon/favicon-120x120.png').default)
+	link(rel="icon" type="image/png" sizes="24x24" href=require('../img/favicon/favicon-24x24.png').default)

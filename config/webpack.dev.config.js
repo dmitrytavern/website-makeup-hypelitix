@@ -3,12 +3,14 @@ const dotenv 							= require('dotenv');
 
 const SpriteLoaderPlugin 	= require('svg-sprite-loader/plugin');
 const LiveReloadPlugin 		= require('webpack-livereload-plugin');
+const ClassCopyPlugin     = require("copy-webpack-plugin");
 
 dotenv.config();
 
 let {
 	names,
 	routeDist,
+	routeRes,
 	resDir,
 	prodDir,
 	pages,
@@ -35,7 +37,12 @@ module.exports = {
 		new LiveReloadPlugin(),
 		new SpriteLoaderPlugin({
 			plainSprite: true
-		})
+		}),
+		new ClassCopyPlugin({
+      patterns: [
+        { from: "src/lang/", to: "lang" },
+      ],
+    }),
 	],
 	devtool: 'eval-cheap-source-map',
 	resolve: {

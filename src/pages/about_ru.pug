@@ -9,15 +9,23 @@ block inner-page-name
 block content
     section.about
         .container
-            img( src=require('../img/dots-3.png').default alt="").about__dot.decor-dot.dot-2
+            picture
+                source(srcset=require('../img/dots-3.webp').default, type="image/webp")
+                img( src=require('../img/dots-3.png').default alt="" width="212px" height="168px").about__dot.decor-dot.dot-2
+
             .about__content
                 .title.about__title
                     h1.h2 О нас
                     span.line
 
                 .about__image
-                    img.normal( src=require('../img/about-us-img.png').default alt="" )
-                    img.xs( src=require('../img/about-us-img-xs.png').default alt="")
+                    picture
+                        source(srcset=require('../img/about-us-img.webp').default, type="image/webp")
+                        img.normal( src=require('../img/about-us-img.png').default alt="" width="394px" height="471px")
+
+                    picture
+                        source(srcset=require('../img/about-us-img-xs.webp').default, type="image/webp")
+                        img.xs( src=require('../img/about-us-img-xs.png').default alt="" width="394px" height="471px")
 
                 .about__description
                     p

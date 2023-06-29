@@ -98,7 +98,7 @@ const rules = {
 		],
 	},
 	img: {
-		test: /\.jpe?g$|\.gif$|\.png$/,
+		test: /\.jpe?g$|.webp$|\.gif$|\.png$/,
 		use: [
 			{
 				loader: 'file-loader',

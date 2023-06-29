@@ -3,7 +3,7 @@ mixin footer()
         .container
             .row
                 .col-12.col-lg-3.footer__logo-col
-                    a(href=htmlWebpackPlugin.options.route('index.html')).logo.footer__logo
+                    a(href=htmlWebpackPlugin.options.route('index.html') aria-label="Go to home").logo.footer__logo
                         svg
                             use(xlink:href=require('../img/sprite/sprite.svg').default + '#logo')
 
@@ -35,6 +35,6 @@ mixin footer()
                         a( href="mailto: contact@hypelitix.com" ) contact@hypelitix.com
                         a.footer__contacts-tel( href="tel: +380931539090" ) +380 93 153 90 90
                         .footer__contacts-media.social-media
-                            a(href="#").icon-contact-telegram
-                            a(href="#").icon-contact-whatsapp
-                            a(href="#").icon-contact-viber
+                            a(href="#" aria-label="Go to telegram").icon-contact-telegram
+                            a(href="#" aria-label="Go to whatsapp").icon-contact-whatsapp
+                            a(href="#" aria-label="Go to viber").icon-contact-viber
