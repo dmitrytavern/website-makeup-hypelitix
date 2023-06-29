@@ -1,7 +1,7 @@
 {
   "private": true,
   "engines": {
-    "node": "v16.16.0"
+    "node": "^16"
   },
   "browserslist": [
     "> 1%",
